@@ -35,22 +35,60 @@
     </div>
   </nav>
 
-  <section class="contenido">
-    <div class="grid-mesas">
-      <div class="mesa Mesa-2">1</div>
-      <div class="mesa Mesa-1">2</div>
-      <div class="mesa Mesa-3">3</div>
-      <div class="mesa Mesa-4">4</div>
-      <div class="mesa Mesa-5">5</div>
-      <div class="mesa Mesa-6">6</div>
-      <div class="mesa Mesa-7">7</div>
-      <div class="mesa Mesa-8">8</div>
-      <div class="mesa Mesa-9">9</div>
-      <div class="mesa Mesa-10">10</div>
-    </div>
-  </section>
+  <div class="pagina-mesas">
+    <section class="seccion-mesas">
+      <div class="grid-mesas">
+        <button type="button" class="mesa Mesa-1">1</button>
+        <button type="button" class="mesa Mesa-2">2</button>
+        <button type="button" class="mesa Mesa-3">3</button>
+        <button type="button" class="mesa Mesa-4">4</button>
+        <button type="button" class="mesa Mesa-5">5</button>
+        <button type="button" class="mesa Mesa-6">6</button>
+        <button type="button" class="mesa Mesa-7">7</button>
+        <button type="button" class="mesa Mesa-8">8</button>
+        <button type="button" class="mesa Mesa-9">9</button>
+        <button type="button" class="mesa Mesa-10">10</button>
+      </div>
+    </section>
+  
+    <section class="oculto abrir-mesa " id="abrir-mesa">
+      <div class="formulario">
+        <div class="parrafo">
+          <p>Mesa <span id="numero-mesa"></span></p>
+        </div>
+        <form action="">
+          <div class="campo-form">
+            <label for="personas">Personas</label>
+            <input type="number">
+          </div>
 
+          <div class="campo-form">
+            <label for="cliente">Cliente</label>
+            <input type="text">
+          </div>
+
+          <div class="campo-form">
+            <label for="camarero">Camarero</label>
+            <input type="text">
+          </div>
+
+          <div class="campo-form">
+            <label for="comentario">Comentario</label>
+            <input type="text">
+          </div>
+
+          <div class="form-button">
+            <button type="submit">Abrir mesa</button>
+          </div>
+          
+        </form>
+      </div>
+    </section>
+  
+  </div>
+  
   <script src="../index.js"></script>
+  <script src="../scripts/mesas.js"></script>
 </body>
 
 </html>
