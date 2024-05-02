@@ -1,14 +1,11 @@
 
 
 .venta-barra{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 60px;
-    background-color: #3eb77d;
+    background-color: #389878;
     color: #fff;
-    font-size: 30px;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 2em;
 }
 .contenedor-universal {
     display: grid;
@@ -27,14 +24,15 @@
 }
 
 .contenedor-productos .search{
-    text-align:start;
-    font-size: 25px;
-    font-weight: 300;
+  font-size: 22px;
+  font-weight: bold;
+  padding-top: 12px;
+  padding-bottom: 12px;;
 }
 
 .productos-tarjetas {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(120px,1fr));
+    grid-template-columns: repeat(auto-fill, minmax(150px,1fr));
     gap: 20px;
     background-color: #D9D9D9;
     max-height: 500px; 
@@ -42,8 +40,8 @@
 }
     
 .productos-tarjetas div{
-    width: 120px;
-    height: 120px;
+    width: 150px;
+    height: 150px;
     background-color: #f9f9f9;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -71,44 +69,74 @@
 
 
   .tarjeta .imagen-tarjeta{
+    display: flex;
+    align-items: end;
+    
     max-width: 100%; 
-    height: 80%;
+    height: 70%;
     border-bottom-left-radius: 10px; 
     border-bottom-right-radius:10px;
     
   }
 
  .productos-tarjetas .tarjeta p {
-  height: 20%;
+  height: 15%;
   margin: 0px;
   text-align: center;
   font-size: 20px;
   font-weight: 300;
 }
-  .contenedor-factura{
-    align-items: center;
-    
- 
-  }
-  .contenedor-factura .cuenta{
-     
-    padding: 10px 20px; 
-    text-align: center; 
-    font-size: 20px; 
-    font-weight: bold; 
-    border: 1px solid #ccc; 
-    border-radius: 5px; 
-    background-color: #007bff; 
-    color: #fff; 
-  }
+  
+.productos-tarjetas .tarjeta h3 {
+  height: 15%;
+  margin: 0;
+  font-size: 20px;
+  font-weight: 300;
+}
+  
 
-  .total{
-    display: flex;
-    justify-content:space-between;
-    padding: 20px;
-    font-size: 20px;
-    font-weight: 300;
-    
-  }
+
+
+.factura {
+  width: auto;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+
+}
+
+thead{
+  height: 30px;
+}
+
+.factura th, .factura td {
+  border: 1px solid #ddd;
+  padding-left: 5px;
+  text-align: left;
+}
+
+.factura th {
+  background-color: #f2f2f2;
+}
+
+.factura tfoot td {
+  font-weight: bold;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+
+.factura tbody tr:first-child {
+  background-color: #f9f9f9;
+}
+
+
+.factura tbody tr:nth-child(odd) {
+  background-color: #f2f2f2;
+}
+
+
+.factura tbody tr:hover {
+  background-color: #ddd;
+}
   
   
