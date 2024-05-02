@@ -1,12 +1,15 @@
 
 
-.venta-barra{
-    background-color: #389878;
-    color: #fff;
-    text-align: center;
-    padding: 20px 0;
-    font-size: 2em;
+header {
+
+  font-size: 13px;
+  background-color: #379e7d;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
 }
+
+
 .contenedor-universal {
     display: grid;
     grid-template-columns: 1.5fr 1fr;
