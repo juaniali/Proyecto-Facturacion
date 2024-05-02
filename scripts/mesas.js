@@ -8,6 +8,7 @@ const numeroMesa = document.querySelector('#numero-mesa');
 let mesaSeleccionada = null;
 const formButton = document.querySelector('#form-button');
 
+
 formButton.addEventListener('submit', (e)=>{
   e.preventDefault();
   abrirMesa.classList.replace('visible','oculto');
