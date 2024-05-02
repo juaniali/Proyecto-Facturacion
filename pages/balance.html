@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./../css/normalize.css">
   <link rel="stylesheet" href="./../css/style.css">
+  <link rel="stylesheet" href="./../css/balance.css">
   <title>Sistema de facturacion</title>
 </head>
 
@@ -26,13 +27,53 @@
       <li><a href="clientes.html">Clientes</a></li>
     </ul>
 
+    <header>
+      <h1>Balance general</h1>
+    </header>
+    
+    <main>
+      <section class="ingresos">
+        <h2>Ingresos Totales por dia</h2>
+        <form>
+          <div class="ingreso"><input type="number" placeholder="ingresar monto"></div>
+          <button >Aceptar</button>
+        </form>
+        <ul>
+          <li>Ventas de Almuerzo: $500</li>
+          <li>Ventas de Cena: $700</li>
+        </ul>
+      </section>
+      
+      <section id="gastos">
+        <h2>Gastos por dia</h2>
+        <form>
+          <div class="ingreso"><input type="number" placeholder="ingresar monto"></div>
+          <button >Aceptar</button>
+        </form>
+        <ul>
+          <li>Provedor fiambres: $500</li>
+          <li>Cafe: $700</li>
+        </ul>
+      </section>
+      
+      <section id="total">
+        <h2>Total</h2>
+        <p>Ingresos Totales: $1200</p>
+        <p>Gastos Totales: $600</p>
+        <p>Balance Neto: $600</p>
+      </section>
+    </main>
+
+
+
+
     <div class="Burguer">
       <div class="line"></div>
       <div class="line"></div>
       <div class="line"></div>
     </div>
   </nav>
-  <h2>Pagina Balance</h2>
+  
   <script src="../index.js"></script>
 </body>
 
