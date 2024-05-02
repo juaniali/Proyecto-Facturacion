@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap');
+
+/*
+posibles colores
+ blanco #e1e4e8, gris claro #b5bdc4, gris color #aeb4ac,gris oscuro #939ca3,gris mas oscuro #646f77
+*/
+
+
+body {
+  font-family: "arial", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  background-color: #e1e4e8;
+}
+
+nav .navbar-links {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: auto;
+  list-style: none;
+  text-decoration: none;
+  background-color: #646f77;
+  padding: 40px 2px;
+  margin-top: 0;
+}
+
+
+.navbar-links li a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #e1e4e8;
+  font-size: 1.6em;
+  padding: 20px;
+  transition: 0.3s;
+  border-bottom: #646f77;
+
+}
+
+.navbar-links li a:hover {
+  border-bottom: 3px solid #aeb4ac;
+}
+
+.navbar-links li svg {
+  font-size: 60px;
+  color: #e1e4e8;
+}
+
+.Burguer {
+  display: none;
+  justify-content: flex-start;
+
+  flex-direction: column;
+  cursor: pointer;
+  width: 100%;
+  padding-left: 10px;
+  margin-bottom: 20px;
+
+  background-color: #666666;
+}
+
+.Burguer .line {
+  width: 25px;
+  height: 2px;
+  background-color: #e1e4e8;
+  margin: 5px 0;
+}
+
+
+@media only screen and (max-width: 850px) {
+
+  .navbar-links.active {
+    display: none;
+    flex-direction: column;
+    font-size: 10px;
+    transition: all 0.3s ease;
+  }
+
+  .navbar-links {
+    display: flex;
+    flex-direction: column;
+    font-size: 10px;
+
+  }
+
+  .navbar-links li a {
+    margin: 5px;
+    padding: 5px;
+  }
+
+  nav {
+    position: relative;
+  }
+
+  .Burguer {
+    display: flex;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+
+  }
+
+  .navbar-links li svg {
+    font-size: 30px;
+    color: #e1e4e8;
+  }
+
+  
+}
