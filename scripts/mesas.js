@@ -2,18 +2,12 @@
 const abrirMesa = document.querySelector('#abrir-mesa');
 const paginaMesa = document.querySelector('#pagina-mesas');
 const ventaMesa = document.querySelector('#venta-mesa');
+const buttonAbrirMesa = document.querySelector('#button-abrir-mesa');
 
 const mesas = document.querySelectorAll('.mesa');
 const numeroMesa = document.querySelector('#numero-mesa');
 let mesaSeleccionada = null;
-const formButton = document.querySelector('#form-button');
 
-
-formButton.addEventListener('submit', (e)=>{
-  e.preventDefault();
-  abrirMesa.classList.replace('visible','oculto');
-  ventaMesa.classList.replace('oculto','visible');
-});
 
 const colorearBoton = function (event){
 
@@ -21,18 +15,18 @@ const colorearBoton = function (event){
     mesaSeleccionada.style.backgroundColor = '';
   }
 
-  this.style.backgroundColor = 'lightgreen'
+  this.style.backgroundColor = 'lightsalmon';
   mesaSeleccionada = this;
   numeroMesa.innerText = this.innerText;
-  mostrarFormulario();
 }
 
 mesas.forEach(mesa =>{
   mesa.addEventListener('click', colorearBoton);
 });
 
-function mostrarFormulario(){
-  paginaMesa.classList.replace('centro','izquierda');
-  abrirMesa.classList.replace('oculto','visible');
-}
+buttonAbrirMesa.addEventListener('click', (e)=>{
+  e.preventDefault();
+  abrirMesa.style.display = 'none';
+  ventaMesa.style.display = 'flex';
+});
 

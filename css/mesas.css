@@ -8,27 +8,23 @@
 /*Dibujo de las mesas--------------------*/
 .seccion-mesas{
   background-color: #e1e4e8;
- 
   margin: 0;
   padding: 0;
 
   height: 80vh;
-  width: 30rem;
+  width: 40rem;
 
   display: flex;
   justify-content: center;
-  transition: transform 2s ease;
+  align-items: center;
 }
-
-
-
 
 .grid-mesas {
   margin: 20px;
   padding: 20px;
   border: solid #646f77 2px;
-  height: 400px;
-  width: 300px;
+  height: 450px;
+  width: 350px;
   display: grid; 
   grid-template-columns: 1fr 0.6fr 0.6fr 1fr 2fr 1fr ; 
      grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; 
@@ -63,6 +59,7 @@
 .Mesa-2 { 
   grid-area: Mesa-2;
  }
+
 .Mesa-1 { grid-area: Mesa-1; border-radius: 50%;}
 .Mesa-3 { grid-area: Mesa-3; }
 .Mesa-4 { grid-area: Mesa-4; }
@@ -74,59 +71,65 @@
 .Mesa-10 { grid-area: Mesa-10; }
 
 
+/*Formulario--------------*/
 
-/*Abrir Mesa----------------------------*/
-
-.abrir-mesa{
-  margin: 0;
-  padding: 0;
-
-  height: 70vh;
-  width: 40vw;
-
+.formulario{
   display: flex;
   justify-content: center;
   align-items: center;
+
+  height: 80vh;
+  width: 40vw;
+  margin: 0;
+  padding: 0;
+}
+
+form{
+  /* display: flex;
+  flex-direction: column;
+  height: 80vh; */
+}
+
+/*Abrir Mesa----------------------------*/
+/*
+#abrir-mesa{
+  display: flex;
+}*/
+
+.abrir-mesa{
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  margin: 5px;
+  height: 80vh;
+  width: 40vw;
+  
 }
 
 .oculto {
   display: none;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateX(-50%);
 }
 
 .visible {
-  display: flex;
-  opacity: 1;
-  visibility: visible; 
-  transform: translateX(0);   
+  display: flex; 
 }
 
-.formulario{
-  width: 500px;
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  
-  & .parrafo{
-    background-color: lightgreen;
-    margin: 0;
-    border-top: solid #646f77 2px;
-    border-left: solid #646f77 2px;
-    border-right: solid #646f77 2px;
-    text-align: center;
-  }
+.abrir{
+  background-color: lightsalmon;
 }
 
-form{
-  display: flex;
-  flex-direction: column;
-
+.parrafo{
   margin: 0;
-  padding: 20px;
-  border: solid #646f77 2px;
+  border-top: solid #646f77 2px;
+  border-left: solid #646f77 2px;
+  border-right: solid #646f77 2px;
+  text-align: center;
+}
 
+.campos{
+  border: solid #646f77 2px;
+  padding: 20px;
 }
 
 .campo-form{
@@ -146,12 +149,29 @@ form{
   margin-top:20px;
   margin-right:10px;
   padding: 0;
-  
 }
 
 
+/*Venta Mesa----------------------------*/
 
+/* #venta-mesa{
+  display: none;
+} */
 
+.venta-mesa{
+  display: none;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+
+  margin: 5px;
+  height: 80vh;
+  width: 40vw;
+}
+
+.venta{
+  background-color: lightgreen;
+}
 
 /*Media Querys---------------------------------*/
 @media only screen and (max-width: 900px) {

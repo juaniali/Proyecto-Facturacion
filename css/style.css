@@ -42,6 +42,14 @@ nav .navbar-links {
   border-bottom: 3px solid #aeb4ac;
 }
 
+.pagina-actual {
+  border-bottom: 3px solid #aeb4ac !important;
+}
+
+
+
+
+
 .navbar-links li svg {
   font-size: 60px;
   color: #e1e4e8;
