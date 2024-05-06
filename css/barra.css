@@ -77,7 +77,7 @@ header h1 {
   .tarjeta .imagen-tarjeta{
     display: flex;
     align-items: end;
-    
+    cursor: pointer;
     max-width: 100%; 
     height: 70%;
     border-bottom-left-radius: 10px; 
@@ -100,10 +100,19 @@ header h1 {
   font-weight: 300;
 }
   
+.tarjeta:active {
+  transform: scale(0.95); 
+}
+
+
+.tarjeta {
+  transition: transform 0.2s ease; 
+}
 
 
 
-.factura {
+
+#factura {
   width: auto;
   border-collapse: collapse;
   font-family: Arial, sans-serif;
@@ -114,7 +123,7 @@ thead{
   height: 30px;
 }
 
-.factura th, .factura td {
+#factura th, #factura td {
   border: 1px solid #ddd;
   padding-left: 5px;
   text-align: left;
@@ -124,28 +133,28 @@ thead{
   height: 40px;
 }
 
-.factura th {
+#factura th {
   background-color: #f2f2f2;
 }
 
-.factura tfoot td {
+#factura tfoot td {
   font-weight: bold;
   padding-top: 6px;
   padding-bottom: 6px;
 }
 
 
-.factura tbody tr:first-child {
+#factura tbody tr:first-child {
   background-color: #f9f9f9;
 }
 
 
-.factura tbody tr:nth-child(odd) {
+#factura tbody tr:nth-child(odd) {
   background-color: #f2f2f2;
 }
 
 
-.factura tbody tr:hover {
+#factura tbody tr:hover {
   background-color: #ddd;
 }
   
@@ -168,7 +177,7 @@ button {
   margin-top: 10px;
   margin-bottom: 10px;
   transition: background-color 0.3s ease;
-}
+  }
 
 #abrirMesa {
   background-color: #4CAF50; 
@@ -186,4 +195,34 @@ button {
 
 #cerrarMesa:hover {
   background-color: #d32f2f; 
+}
+
+#cuadro{
+  display: none; 
+  background-color: #f0f0f0; 
+  padding: 80px; 
+  border-radius: 10px; 
+  position: fixed; top: 50%; left: 50%; 
+  transform: translate(-50%, -50%); 
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); 
+  z-index: 999;
+  font-size: 25px
+  ;
+}
+
+#cerrarCuadro{
+display: block; 
+margin: 0 auto; 
+padding: 8px 16px; 
+background-color: #4CAF50; 
+color: white; 
+border: none; 
+border-radius: 4px; 
+cursor: pointer;
+}
+
+#mensaje{
+  font-size: 28px;
+  text-align:center;
+  font-weight: bold;
 }
