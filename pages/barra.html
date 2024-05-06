@@ -27,6 +27,13 @@
         <li><a href="/Proyecto-Facturacion/pages/clientes.html">Clientes</a></li>
     </ul>
   </nav>
+
+  <div class="Burguer">
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+  </div>
+
   
   <header>
     <h1>Venta Barra</h1>
@@ -36,17 +43,17 @@
     <div class="contenedor-productos">
       <div class="search">Productos<input type="search" placeholder="Buscar Producto"></div>
       <div class="productos-tarjetas">
-        <div class="tarjeta">
+        <div class="tarjeta" data-nombre="CrossaintJQ" data-precio="$1000">
           <p>CrossaintJQ</p>
           <h3>$1000</h3>
         <img class="imagen-tarjeta" src="./../img/petr-magera-Dh9c2VBi8S0-unsplash.jpg" alt="">
       </div>
-        <div class="tarjeta">
+        <div class="tarjeta" data-nombre="coca" data-precio="$800">
           <p>Coca</p>
           <h3>$800</h3>
         <img class="imagen-tarjeta" src="./../img/coca.jpg" alt="">
         </div>
-        <div class="tarjeta">Prodcuto3</div>
+        <div class="tarjeta" data-nombre="Producto3">Producto3</div>
         <div class="tarjeta">Prodcuto4</div>
         <div class="tarjeta">Prodcuto5</div>
         <div class="tarjeta">Prodcuto6</div>
@@ -86,7 +93,7 @@
       <tbody>
         
         <tr>
-          <td>Producto 1</td>
+          <td class=>Producto 1</td>
           <td>2</td>
           <td>$10.00</td>
           <td>$20.00</td>
@@ -109,41 +116,27 @@
           <td>$15.00</td>
           <td>$15.00</td>
         </tr>
-        <tr>
-          <td>Producto 5</td>
-          <td>1</td>
-          <td>$15.00</td>
-          <td>$15.00</td>
-        </tr>
-        <tr>
-          <td>Producto 6</td>
-          <td>1</td>
-          <td>$15.00</td>
-          <td>$15.00</td>
-        </tr>
-        <tr>
-          <td>Producto 7</td>
-          <td>1</td>
-          <td>$15.00</td>
-          <td>$15.00</td>
-        </tr>
       </tbody>
-      <tfoot>
+      
+     <tfoot> 
         <tr>
-          <td colspan = "3">Total</td>
+          <td  colspan = "3">Total</td>
           <td>$35.00</td>
         </tr>
       </tfoot>
+
+     
     </table>
-    
-    <div class="Burguer">
-      <div class="line"></div>
-      <div class="line"></div>
-      <div class="line"></div>
+
+    <div class="botones-al-final">
+      <button id="abrirMesa">Abrir Cuenta</button>
+      <button id="cerrarMesa">Cerrar Cuenta</button>
     </div>
- 
+    
+    
   
   <script src="../index.js"></script>
+  <script src="../scripts/barra.js"></script>
 </body>
 
 </html>

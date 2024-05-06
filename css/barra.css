@@ -1,24 +1,28 @@
 
 
-header {
-  font-size: 13px;
+header h1 {
+  margin: 0;
+  font-size: 25px;
+  font-weight: 200;
   background-color: #379e7d;
   color: #fff;
   text-align: center;
-  padding: 5px 0;
+  height: 40px;
+  padding-top: 10px;
+
 }
 
-/*
+
 .contenedor-universal {
     display: grid;
-    grid-template-columns: 1.5fr 1fr;
+    grid-template-columns: 1fr 1fr;
     background-color: #EDECEC;
     overflow-y: auto;
 
 }
 
 .contenedor-productos{
-    padding: 40px 40px;
+    padding: 20px 20px;
     display: grid;
     grid-template-rows: 100px 1fr; 
     background-color: #D9D9D9;
@@ -28,8 +32,8 @@ header {
 .contenedor-productos .search{
   font-size: 22px;
   font-weight: bold;
-  padding-top: 12px;
-  padding-bottom: 12px;;
+  padding-top: 5px;
+  padding-bottom: 5px;;
 }
 
 .productos-tarjetas {
@@ -116,14 +120,18 @@ thead{
   text-align: left;
 }
 
+.tdHeight{
+  height: 40px;
+}
+
 .factura th {
   background-color: #f2f2f2;
 }
 
 .factura tfoot td {
   font-weight: bold;
-  padding-top: 12px;
-  padding-bottom: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
 
 
@@ -141,4 +149,41 @@ thead{
   background-color: #ddd;
 }
   
-  
+.botones-al-final{
+grid-column-start: -2;
+grid-column-end: -1;
+display: flex;
+justify-content:space-evenly;
+}
+
+
+button {
+  padding: 10px 40px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  transition: background-color 0.3s ease;
+}
+
+#abrirMesa {
+  background-color: #4CAF50; 
+  color: white;
+}
+
+#abrirMesa:hover {
+  background-color: #45a049; 
+}
+
+#cerrarMesa {
+  background-color: #f44336; 
+  color: white;
+}
+
+#cerrarMesa:hover {
+  background-color: #d32f2f; 
+}
