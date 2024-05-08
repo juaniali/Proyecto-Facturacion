@@ -12,21 +12,19 @@
 </head>
 
 <body>
-
-  <!-- <nav>
+  <nav>
     <ul class="navbar-links">
-      <li><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 21 21">
+      <li><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.9"><path stroke-dasharray="6" stroke-dashoffset="6" d="M12 21H17M12 21H7"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.3s" values="6;0"/></path><path stroke-dasharray="6" stroke-dashoffset="6" d="M12 21V17"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.2s" values="6;0"/></path><path stroke-dasharray="64" stroke-dashoffset="64" d="M12 17H3V5H21V17Z"><animate fill="freeze" attributeName="stroke-dashoffset" begin="0.3s" dur="0.6s" values="64;0"/></path></g></svg>
           <g fill="none" fill-rule="evenodd" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
             <path d="m1.5 10.5l9-9l9 9" />
-            <path
-              d="M3.5 8.5v8a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-8" />
+            <path d="M3.5 8.5v8a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-8" />
           </g>
         </svg></li>
-        <li><a href="/Proyecto-Facturacion/pages/mesas.html">Mesas</a></li>
-        <li><a href="/Proyecto-Facturacion/pages/barra.html">Barra</a></li>
-        <li><a href="/Proyecto-Facturacion/pages/balance.html">Balance</a></li>
-        <li><a href="/Proyecto-Facturacion/pages/producto.html">Producto</a></li>
-        <li><a href="/Proyecto-Facturacion/pages/clientes.html">Clientes</a></li>
+      <li><a class="nav-link" href="/pages/mesas.html">Mesas</a></li>
+      <li><a class="nav-link" href="/pages/barra.html">Barra</a></li>
+      <li><a class="nav-link" href="/pages/balance.html">Balance</a></li>
+      <li><a class="nav-link" href="/pages/producto.html">Producto</a></li>
+      <li><a class="nav-link" href="/pages/clientes.html">Clientes</a></li>
     </ul>
 
     <div class="Burguer">
@@ -34,104 +32,105 @@
       <div class="line"></div>
       <div class="line"></div>
     </div>
-  </nav> -->
+  </nav>
   
-  <nav id="nav"></nav>
-  <script src="../scripts/loadNav.js"></script>
-  
-  <section class="pagina-mesas centro" id="pagina-mesas">
-    <section class="seccion-mesas">
-      <div class="grid-mesas">
-        <button type="button" class="mesa Mesa-1">1</button>
-        <button type="button" class="mesa Mesa-2">2</button>
-        <button type="button" class="mesa Mesa-3">3</button>
-        <button type="button" class="mesa Mesa-4">4</button>
-        <button type="button" class="mesa Mesa-5">5</button>
-        <button type="button" class="mesa Mesa-6">6</button>
-        <button type="button" class="mesa Mesa-7">7</button>
-        <button type="button" class="mesa Mesa-8">8</button>
-        <button type="button" class="mesa Mesa-9">9</button>
-        <button type="button" class="mesa Mesa-10">10</button>
-      </div>
-    </section>
-  
-    <section class="formulario">
-      <form>
-    
-        <section class="abrir-mesa" id="abrir-mesa">
-          <div class="parrafo abrir">
-            <p>Abrir Mesa <span id="numero-mesa"></span></p>
-          </div>
-          <div class="campos">
-            <div class="campo-form">
-              <label for="personas">Personas</label>
-              <input type="number" placeholder="Cantidad de personas">
-            </div>
-    
-            <div class="campo-form">
-              <label for="cliente">Cliente</label>
-              <input type="text" placeholder="Nombre de Cliente">
-            </div>
-    
-            <div class="campo-form">
-              <label for="camarero">Camarero</label>
-              <input type="text" placeholder="Nombre de Camarero">
-            </div>
-    
-            <div class="campo-form">
-              <label for="comentario">Comentario</label>
-              <input type="text" placeholder="Comentario">
-            </div>
-    
-            <div class="form-button">
-              <button type="button" id="button-abrir-mesa">Abrir mesa</button>
-            </div>
-          </div>
-        </section>
-    
-        <section class="oculto venta-mesa" id="venta-mesa">
-          <div class="parrafo venta">
-            <p>Venta de Mesa <span id="numero-mesa"></span></p>
-          </div>
-          <div class="campos">
-            <div class="campo-form">
-              <input type="text" placeholder="Buscar Producto">
-              <ul>
-                <li>14. Agua mineral</li>
-                <li>10. Menu</li>
-                <li>2. Cafe chico</li>
-                <li>3. Cafe grande</li>
-                <li>5. Soda</li>
-                <li>22. Medialunas</li>
-              </ul>
-            </div>
-    
-            <div class="campo-form">
-              <label for="cuenta">Cuenta</label>
-              <ul>
-                <li>2. Cafe chico $1400</li>
-                <li>22. Medialunas $1600</li>
-              </ul>
-            </div>
-    
-            <div>
-              <span>Total: $3000,00</span>
-            </div>
 
-            <div class="form-button">
-              <button type="submit" id="form-button">Cerrar mesa</button>
+  <div id="content" class="page-transition">
+    <section class="pagina-mesas centro" id="pagina-mesas">
+      <section class="seccion-mesas">
+        <div class="grid-mesas">
+          <button type="button" class="mesa Mesa-1">1</button>
+          <button type="button" class="mesa Mesa-2">2</button>
+          <button type="button" class="mesa Mesa-3">3</button>
+          <button type="button" class="mesa Mesa-4">4</button>
+          <button type="button" class="mesa Mesa-5">5</button>
+          <button type="button" class="mesa Mesa-6">6</button>
+          <button type="button" class="mesa Mesa-7">7</button>
+          <button type="button" class="mesa Mesa-8">8</button>
+          <button type="button" class="mesa Mesa-9">9</button>
+          <button type="button" class="mesa Mesa-10">10</button>
+        </div>
+      </section>
+    
+      <section class="formulario">
+        <form>
+      
+          <section class="abrir-mesa" id="abrir-mesa">
+            <div class="parrafo abrir">
+              <p>Abrir Mesa <span id="numero-mesa"></span></p>
             </div>
-
-          </div>
+            <div class="campos">
+              <div class="campo-form">
+                <label for="personas">Personas</label>
+                <input type="number" placeholder="Cantidad de personas">
+              </div>
+      
+              <div class="campo-form">
+                <label for="cliente">Cliente</label>
+                <input type="text" placeholder="Nombre de Cliente">
+              </div>
+      
+              <div class="campo-form">
+                <label for="camarero">Camarero</label>
+                <input type="text" placeholder="Nombre de Camarero">
+              </div>
+      
+              <div class="campo-form">
+                <label for="comentario">Comentario</label>
+                <input type="text" placeholder="Comentario">
+              </div>
+      
+              <div class="form-button">
+                <button type="button" id="button-abrir-mesa">Abrir mesa</button>
+              </div>
+            </div>
+          </section>
+      
+          <section class="oculto venta-mesa" id="venta-mesa">
+            <div class="parrafo venta">
+              <p>Venta de Mesa <span id="numero-mesa"></span></p>
+            </div>
+            <div class="campos">
+              <div class="campo-form">
+                <input type="text" placeholder="Buscar Producto">
+                <ul>
+                  <li>14. Agua mineral</li>
+                  <li>10. Menu</li>
+                  <li>2. Cafe chico</li>
+                  <li>3. Cafe grande</li>
+                  <li>5. Soda</li>
+                  <li>22. Medialunas</li>
+                </ul>
+              </div>
+      
+              <div class="campo-form">
+                <label for="cuenta">Cuenta</label>
+                <ul>
+                  <li>2. Cafe chico $1400</li>
+                  <li>22. Medialunas $1600</li>
+                </ul>
+              </div>
+      
+              <div>
+                <span>Total: $3000,00</span>
+              </div>
+  
+              <div class="form-button">
+                <button type="submit" id="form-button">Cerrar mesa</button>
+              </div>
+  
+            </div>
+              
             
-          
-        </section>
-    
-      </form>
+          </section>
+      
+        </form>
+      
+      </section>
     
     </section>
-  
-  </section>
+  </div>
+ 
   <script src="../index.js"></script>
   <script src="../scripts/mesas.js"></script>
 </body>
