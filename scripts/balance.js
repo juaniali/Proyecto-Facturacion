@@ -1,65 +1,55 @@
+document.addEventListener('DOMContentLoaded', function() {
+  const formularioGasto = document.querySelector('#gastos form');
+  const inputComentario = document.getElementById('comentarioGasto');
+  const inputMonto = document.querySelector('#gastos input[type="number"]');
+  const listaGastos = document.querySelector('#gastos ul');
+  const totalElemento = document.getElementById('total');
 
-document.addEventListener('DOMContentLoaded', () => {
-  // Recuperar el valor del balance del día del almacenamiento local
-  const ventasDia = localStorage.getItem('ventasDia');
-  if (ventasDia) {
-    // Actualizar el elemento HTML para mostrar el balance del día
-    document.getElementById('balanceDiaTexto').innerText = `Ventas del Dia: $${ventasDia}`;
-  }
-});
+  let gastos = [];
 
-document.addEventListener("DOMContentLoaded", function() {
-  const inputMonto = document.querySelector("#gastos input[type='number']");
-  const inputDescripcion = document.querySelector("#gastos input[type='text']");
-  const formGastos = document.querySelector("#gastos form");
-  const listaGastos = document.querySelector("#gastos ul");
+  formularioGasto.addEventListener('submit', function(event) {
+    event.preventDefault();
 
-  // Obtener los gastos almacenados en el localStorage
-  let gastos = JSON.parse(localStorage.getItem("gastos")) || [];
+    const monto = parseFloat(inputMonto.value);
+    const comentario = inputComentario.value.trim();
+    const fecha = new Date().toLocaleString();
 
-  // Función para mostrar los gastos en la lista
-  function mostrarGastos() {
-      listaGastos.innerHTML = "";
-      gastos.forEach(gasto => {
-          const li = document.createElement("li");
-          li.textContent = `${gasto.descripcion}: $${gasto.monto.toFixed(2)} - ${gasto.fecha}`;
-          listaGastos.appendChild(li);
-      });
-  }
+    if (!isNaN(monto) && monto > 0) {
+      const gasto = {
+        comentario: comentario,
+        monto: monto,
+        fecha: fecha
+      };
+      gastos.push(gasto);
 
-  // Función para calcular el total de los gastos
-  function calcularTotalGastos() {
-      return gastos.reduce((total, gasto) => total + gasto.monto, 0);
-  }
-
-  // Mostrar los gastos existentes al cargar la página
-  mostrarGastos();
-
-  // Manejar el evento de enviar el formulario de gastos
-  formGastos.addEventListener("submit", function(event) {
-      event.preventDefault();
-
-      const monto = parseFloat(inputMonto.value);
-      const descripcion = inputDescripcion.value;
-      const fecha = new Date().toLocaleString(); // Obtiene la fecha actual
-
-      if (!isNaN(monto)) {
-          // Agregar el gasto a la lista
-          gastos.push({ descripcion, monto, fecha });
-
-          // Actualizar el almacenamiento local
-          localStorage.setItem("gastos", JSON.stringify(gastos));
-
-          // Mostrar el nuevo gasto en la lista
-          mostrarGastos();
-
-          // Calcular y mostrar el total de los gastos
-          const totalGastos = calcularTotalGastos();
-          document.querySelector("#total p:nth-of-type(2)").textContent = `Gastos Totales: $${totalGastos.toFixed(2)}`;
-
-          // Limpiar los campos de entrada después de agregar el gasto
-          inputMonto.value = "";
-          inputDescripcion.value = "";
-      }
+      mostrarGastoEnLista(gasto);
+      actualizarTotal(gasto.monto);
+      reiniciarFormulario();
+    } else {
+      alert('Ingrese un monto válido.');
+    }
   });
+
+  function mostrarGastoEnLista(gasto) {
+    const itemLista = document.createElement('li');
+    const textoGasto = document.createElement('span');
+    textoGasto.innerHTML = `<strong>${gasto.comentario}</strong> - $${gasto.monto.toFixed(2)} ${gasto.fecha}`;
+    itemLista.appendChild(textoGasto);
+    listaGastos.appendChild(itemLista);
+  }
+  
+
+  function actualizarTotal(monto) {
+    let total = 0;
+    for (let i = 0; i < gastos.length; i++) {
+      total += gastos[i].monto;
+    }
+    totalElemento.innerText = `Total: $${total.toFixed(2)}`;
+  }
+
+  function reiniciarFormulario() {
+    inputComentario.value = '';
+    inputMonto.value = '';
+    inputComentario.focus();
+  }
 });

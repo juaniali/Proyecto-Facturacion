@@ -39,30 +39,20 @@
     </header>
   
     <main>
-      <section class="ingresos">
-        <h2>Ingresos Totales por dia</h2>
-        <form>
-          <div class="ingreso"><input type="number" placeholder="ingresar monto"></div>
-          <button>Aceptar</button>
-        </form>
-        <ul>
-          <li>Ventas de Almuerzo: $500</li>
-          <li>Ventas de Cena: $700</li>
-        </ul>
-      </section>
-  
+      
       <section id="gastos">
-        <h2>Gastos por dia</h2>
-        <form>
-          <div class="ingreso"><input type="number" placeholder="ingresar monto"></div>
-          <button>Aceptar</button>
+        <h2>Gastos</h2>
+        <form id="formularioGasto">
+          <div class="ingreso">
+            <input type="number" placeholder="Ingresar monto" id="montoGasto">
+            <input type="text" placeholder="Agregar comentario al gasto" id="comentarioGasto">
+            <button type="submit">Aceptar</button>
+          </div>
         </form>
         <ul>
-          <li>Provedor fiambres: $500</li>
-          <li>Cafe: $700</li>
+       
         </ul>
       </section>
-  
       <section id="total">
         <h2>Total</h2>
         <p>Ingresos Totales: $1200</p>
