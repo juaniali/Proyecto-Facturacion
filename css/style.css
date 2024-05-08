@@ -42,6 +42,22 @@ nav .navbar-links {
   border-bottom: 3px solid #aeb4ac;
 }
 
+.page-transition {
+  animation: aparecer 0.3s ease;
+}
+.page-transition.hide {
+  animation: desaparecer 0.3s ease;
+}
+
+@keyframes aparecer {
+  0% {transform:translate(100%);}
+  100% {transform:translate(0);}
+}
+
+@keyframes desaparecer {
+  0% {transform:translate(0);}
+  100% {transform:translate(-100%);}
+}
 
 .navbar-links li svg {
   font-size: 60px;
