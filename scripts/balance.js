@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const totalVentasDiaElemento = document.getElementById('totalVentasDia');
 
   let gastos = [];
+  let totalVentasDia = 0;
 
   formularioGasto.addEventListener('submit', function(event) {
     event.preventDefault();
@@ -26,6 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
       mostrarGastoEnLista(gasto);
       actualizarTotal(gasto.monto);
+      guardarVentaParcial(gasto.monto); // Guardar la venta parcial
       reiniciarFormulario();
     } else {
       alert('Ingrese un monto válido.');
@@ -54,20 +56,30 @@ document.addEventListener('DOMContentLoaded', function() {
     inputComentario.focus();
   }
 
+  function guardarVentaParcial(monto) {
+    // Generar una clave única para la venta parcial (puedes usar un timestamp)
+    const claveVenta = 'ventaParcialBarra_' + Date.now();
+    // Guardar el monto de la venta parcial en el almacenamiento local
+    localStorage.setItem(claveVenta, monto.toString());
+  }
+
   // Función para mostrar las ventas del día
   function mostrarVentasDelDia() {
-    let totalVentasDia = 0;
-    // Recuperar todas las ventas almacenadas en el Local Storage
-    const ventas = Object.values(localStorage).filter(key => key.startsWith('ventaParcialBarra'));
-    // Limpiar la lista de ventas del día
+    // Limpiar la lista de ventas del día y reiniciar el total
     listaVentasDia.innerHTML = '';
-    // Mostrar cada venta en la lista y calcular el total de ventas del día
-    ventas.forEach(venta => {
-      totalVentasDia += parseFloat(venta);
-      const itemLista = document.createElement('li');
-      itemLista.textContent = `$${parseFloat(venta).toFixed(2)}`;
-      listaVentasDia.appendChild(itemLista);
-    });
+    totalVentasDia = 0;
+
+    // Recuperar todas las ventas almacenadas en el Local Storage
+    for (let i = 0; i < localStorage.length; i++) {
+      const key = localStorage.key(i);
+      if (key.startsWith('ventaParcialBarra')) {
+        const ventaParcial = parseFloat(localStorage.getItem(key));
+        totalVentasDia += ventaParcial;
+        const itemLista = document.createElement('li');
+        itemLista.textContent = `$${ventaParcial.toFixed(2)}`;
+        listaVentasDia.appendChild(itemLista);
+      }
+    }
     // Mostrar el total de ventas del día
     totalVentasDiaElemento.textContent = `Total de Ventas: $${totalVentasDia.toFixed(2)}`;
   }
