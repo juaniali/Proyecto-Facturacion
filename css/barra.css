@@ -166,10 +166,10 @@ justify-content:space-evenly;
 }
 
 
-button {
+.botonFactura {
   padding: 10px 40px;
   font-size: 16px;
-  font-weight: bold;
+  font-weight: 600;
   text-align: center;
   border: none;
   cursor: pointer;
@@ -205,10 +205,10 @@ button {
   position: fixed; top: 50%; left: 50%; 
   transform: translate(-50%, -50%); 
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); 
-  z-index: 999;
-  font-size: 25px
-  ;
+  z-index: 1;
+  font-size: 25px;
 }
+
 
 #cerrarCuadro{
 display: block; 

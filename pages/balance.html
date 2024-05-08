@@ -62,25 +62,16 @@
     <h1>Balance general</h1>
   </header>
 
-  <main>
-    <section class="ingresos">
-      <h2>Ingresos Totales por dia</h2>
-      <form>
-        <div class="ingreso"><input type="number" placeholder="ingresar monto"></div>
-        <button>Aceptar</button>
-      </form>
-      <ul>
-        <li>Ventas de Almuerzo: $500</li>
-        <li>Ventas de Cena: $700</li>
-      </ul>
-    </section>
+  
 
+  <main>
     <section id="gastos">
-      <h2>Gastos por dia</h2>
+      <h2>Gastos</h2>
       <form>
         <div class="ingreso"><input type="number" placeholder="ingresar monto"></div>
+        <input type="text" placeholder="Descripción del gasto">
         <button>Aceptar</button>
-      </form>
+        </form>
       <ul>
         <li>Provedor fiambres: $500</li>
         <li>Cafe: $700</li>
@@ -88,14 +79,31 @@
     </section>
 
     <section id="total">
-      <h2>Total</h2>
+      <h2>Balance</h2>
       <p>Ingresos Totales: $1200</p>
       <p>Gastos Totales: $600</p>
       <p>Balance Neto: $600</p>
     </section>
+  
+    <div id="balanceDia">
+      <h2>Ventas del Dia</h2>
+      <p id="balanceDiaTexto">Total de ventas del dia : $0.00</p>
+      <button class="abrirCaja">Abrir Caja</button>
+      <button class="cerrarCaja">Cerrar Caja</button>
+    
+    </div>
+  
+  
   </main>
 
+  
+ 
+
+ 
+  
   <script src="../index.js"></script>
+  <script src="../scripts/barra.js"></script>
+  <script src="../scripts/balance.js"></script>
 </body>
 
 </html>

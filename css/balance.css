@@ -41,79 +41,10 @@ body {
   }
   
   
-
- .ingresos form {
-    display: flex;
-    justify-content:start;
-    width: fit-content;
-    background-color: #D9D9D9;
-    border-radius: 5px; 
-    margin-left: 0;
-}
-
-.ingresos form button{
-    background-color: #f0f0f0; 
-    border: 1px solid #ccc; 
-    color: #333; 
-    padding: 8px 16px; 
-    margin-left: 10px;
-    border-radius: 8px;
-    font-size: 14px;
-    font-weight: bold; 
-    cursor: pointer; 
-    transition: background-color 0.3s ease; 
-}
-
-
-.ingresos form button:hover {
-    background-color: #ddd;
-}
-
-
-
-
- .ingreso input{
-    width: 30vw;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-    font-family: Arial, sans-serif;
-    font-size: 16px;
-    color: #333;
-    
-}
-
-.ingreso input:focus{
-    outline: none;
-    border-color: #007bff; 
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); 
-  }
-
-  .ingresos form button{
-    background-color: #f0f0f0; 
-    border: 1px solid #ccc; 
-    color: #333; 
-    padding: 8px 16px; 
-    margin-left: 10px;
-    border-radius: 8px;
-    font-size: 14px;
-    font-weight: bold; 
-    cursor: pointer; 
-    transition: background-color 0.3s ease; 
-}
-
-
-.ingresos form button:hover {
-    background-color: #ddd;
-}
-
-
 #gastos form {
   display: flex;
   justify-content:start;
-  width: fit-content;
-  
+  width:100%;
   border-radius: 5px; 
   margin-left: 0;
 }
@@ -139,6 +70,7 @@ body {
  #gastos input{
     width: 30vw;
     padding: 10px;
+    margin-right: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
@@ -153,6 +85,9 @@ body {
     border-color: #007bff; 
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); 
   }
+
+  
+
 
   ul {
     list-style: none;
@@ -171,3 +106,68 @@ body {
   section:nth-child(even) {
     background-color: #ffffff;
   }
+
+
+
+  
+  /* Estilos específicos para el botón "Abrir Caja" */
+.abrirCaja {
+  display: inline-block;
+  width: 200px;
+  padding: 10px;
+  margin: 0 10px 20px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #4CAF50; /* Verde */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.abrirCaja:hover {
+  background-color: #45a049; /* Verde más oscuro al pasar el cursor */
+}
+
+/* Estilos específicos para el botón "Cerrar Caja" */
+.cerrarCaja {
+  display: inline-block;
+  width: 200px;
+  padding: 10px;
+  margin: 0 10px 20px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #f44336; /* Rojo */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.cerrarCaja:hover {
+  background-color: #d32f2f; /* Rojo oscuro al pasar el cursor */
+  animation: pulse 1s infinite; /* Efecto de latido de corazón */
+}
+
+/* Efecto de latido de corazón */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+
+  #balanceDia {
+    text-align: center; 
+    font-size: 20px;
+  }
+  
+  .abrirCaja .cerrarCaja {
+    display: block; 
+    margin: 10px auto; 
+  }
+  
