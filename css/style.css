@@ -22,7 +22,7 @@ nav .navbar-links {
   list-style: none;
   text-decoration: none;
   background-color: #646f77;
-  padding: 40px 2px;
+  padding: 20px 2px;
   margin: 0;
 }
 
@@ -32,7 +32,7 @@ nav .navbar-links {
   text-transform: uppercase;
   color: #e1e4e8;
   font-size: 1.6em;
-  padding: 20px;
+  padding: 10px;
   transition: 0.3s;
   border-bottom: #646f77;
 
@@ -41,13 +41,6 @@ nav .navbar-links {
 .navbar-links li a:hover {
   border-bottom: 3px solid #aeb4ac;
 }
-
-.pagina-actual {
-  border-bottom: 3px solid #aeb4ac !important;
-}
-
-
-
 
 
 .navbar-links li svg {
