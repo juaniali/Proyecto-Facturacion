@@ -1,21 +1,11 @@
 const burguer = document.querySelector(".Burguer");
 
-const navBarLinks = document.querySelector(".navbar-links");
-
-// var paginaActual = new URL(window.location.href).pathname;
-// var navLinks = document.querySelectorAll('.navbar-links a');
-
-// navLinks.forEach( link=>{
-//   var linkPath = new URL(link.href).pathname;
-//   if(linkPath === paginaActual){
-//     link.classList.add('pagina-actual');
-//   }
-// });
-
 
 burguer.addEventListener("click", () =>{
     navBarLinks.classList.toggle("active");
 });
+
+const navBarLinks = document.querySelector(".navbar-links");
 
 document.querySelectorAll('.nav-link').forEach(link => {
 
@@ -27,10 +17,6 @@ document.querySelectorAll('.nav-link').forEach(link => {
     // Ocultar la página actual con transición
     document.getElementById('content').classList.add('hide');
     window.location.href = nextPage;
-    // Esperar a que termine la transición y luego cargar la nueva página
-    // setTimeout(() => {
-    //   window.location.href = nextPage;
-    // }, 1000); // Tiempo de espera igual al tiempo de transición en CSS
   });
 });
     
