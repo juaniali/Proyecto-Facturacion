@@ -14,10 +14,17 @@
 <body>
   <nav>
     <ul class="navbar-links">
-      <li><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.9"><path stroke-dasharray="6" stroke-dashoffset="6" d="M12 21H17M12 21H7"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.3s" values="6;0"/></path><path stroke-dasharray="6" stroke-dashoffset="6" d="M12 21V17"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.2s" values="6;0"/></path><path stroke-dasharray="64" stroke-dashoffset="64" d="M12 17H3V5H21V17Z"><animate fill="freeze" attributeName="stroke-dashoffset" begin="0.3s" dur="0.6s" values="64;0"/></path></g></svg>
-          <g fill="none" fill-rule="evenodd" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-            <path d="m1.5 10.5l9-9l9 9" />
-            <path d="M3.5 8.5v8a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-8" />
+      <li><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+          <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1">
+            <path stroke-dasharray="48" stroke-dashoffset="48" d="M17 4v9a3 3 0 0 1-3 3H8a3 3 0 0 1-3-3V4z">
+              <animate fill="freeze" attributeName="stroke-dashoffset" begin="0.4s" dur="0.6s" values="48;0" />
+            </path>
+            <path stroke-dasharray="14" stroke-dashoffset="14" d="M17 9H20C20.55 9 21 8.55 21 8V5C21 4.45 20.55 4 20 4H17">
+              <animate fill="freeze" attributeName="stroke-dashoffset" begin="1s" dur="0.2s" values="14;28" />
+            </path>
+            <path stroke-dasharray="10" stroke-dashoffset="10" d="M11 20h8M11 20h-8">
+              <animate fill="freeze" attributeName="stroke-dashoffset" dur="0.3s" values="10;0" />
+            </path>
           </g>
         </svg></li>
       <li><a class="nav-link" href="/pages/mesas.html">Mesas</a></li>
@@ -54,35 +61,14 @@
     
       <section class="formulario">
         <form>
-      
           <section class="abrir-mesa" id="abrir-mesa">
-            <div class="parrafo abrir">
-              <p>Abrir Mesa <span id="numero-mesa"></span></p>
-            </div>
             <div class="campos">
-              <div class="campo-form">
-                <label for="personas">Personas</label>
-                <input type="number" placeholder="Cantidad de personas">
-              </div>
-      
-              <div class="campo-form">
-                <label for="cliente">Cliente</label>
-                <input type="text" placeholder="Nombre de Cliente">
-              </div>
-      
-              <div class="campo-form">
-                <label for="camarero">Camarero</label>
-                <input type="text" placeholder="Nombre de Camarero">
-              </div>
-      
-              <div class="campo-form">
-                <label for="comentario">Comentario</label>
-                <input type="text" placeholder="Comentario">
-              </div>
-      
-              <div class="form-button">
-                <button type="button" id="button-abrir-mesa">Abrir mesa</button>
-              </div>
+              <h2>Abrir Mesa <span id="numero-mesa"></span></h2>
+              <input type="number" placeholder="Cantidad de personas">
+              <input type="text" placeholder="Nombre de Cliente">
+              <input type="text" placeholder="Nombre de Camarero">
+              <input type="text" placeholder="Comentario">
+              <button type="button" id="button-abrir-mesa">Abrir mesa</button>
             </div>
           </section>
       
@@ -121,7 +107,6 @@
   
             </div>
               
-            
           </section>
       
         </form>

@@ -34,7 +34,7 @@ function reiniciarFactura() {
     document.getElementById('total').innerText = '$0.00';
 }
 
-document.getElementById('abrirMesa').addEventListener('click', () => {
+document.getElementById('reiniciarMesa').addEventListener('click', () => {
     reiniciarFactura();
     mostrarMensaje('Venta Restaurada');
 });
