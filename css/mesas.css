@@ -1,3 +1,14 @@
+header h1 {
+  margin: 0;
+    font-size: 25px;
+    font-weight:600;
+    background-color: #bd3a3a;
+  color: #fff;
+  text-align: center;
+  height: 40px;
+  padding-top: 10px;
+}
+ 
 
 .pagina-mesas{
   display: flex;
