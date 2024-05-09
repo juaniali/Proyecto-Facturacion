@@ -3,7 +3,7 @@
 header h1 {
   margin: 0;
   font-size: 25px;
-  font-weight: 200;
+  font-weight: 600;
   background-color: #379e7d;
   color: #fff;
   text-align: center;
@@ -179,21 +179,21 @@ justify-content:space-evenly;
   transition: background-color 0.3s ease;
   }
 
-#abrirMesa {
+  .botonVerde {
   background-color: #4CAF50; 
   color: white;
 }
 
-#abrirMesa:hover {
+.botonVerde:hover {
   background-color: #45a049; 
 }
 
-#cerrarMesa {
+.botonRojo {
   background-color: #f44336; 
   color: white;
 }
 
-#cerrarMesa:hover {
+.botonRojo:hover {
   background-color: #d32f2f; 
 }
 
