@@ -67,7 +67,6 @@ nav .navbar-links {
 .Burguer {
   display: none;
   justify-content: flex-start;
-
   flex-direction: column;
   cursor: pointer;
   width: 100%;

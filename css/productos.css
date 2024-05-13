@@ -111,3 +111,32 @@ button:hover {
   background-color: #b42b44;
   
 }
+
+.custom-file-input {
+  color: transparent;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 950px){
+  main {
+    gap: 5%;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+}
+
+
+@media only screen and (max-width: 750px){
+  main {
+    display: block;
+    flex-direction: column;
+  }
+  .form{
+    width: 100%;
+   padding: 0;
+   padding-left: 6px;
+   margin-bottom: 30px;
+}
+
+ 
+}
