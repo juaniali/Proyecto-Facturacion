@@ -33,7 +33,25 @@
     </div>
   </nav> 
 
-  <div id="content"></div>
+  <div id="content">
+
+    <section>
+      <form id="inicioSesion">
+        <div>
+          <input type="text" name="username" id="username" placeholder="username">
+          <p id="userRequired" class="hidden">Campo Requerido</p>
+        </div>
+        <div>
+          <input type="password" name="password" id="password" placeholder="password">
+          <p id="passRequired" class="hidden">Campo Requerido</p>
+        </div>
+        
+        <button type="submit">Iniciar Sesion</button>
+      </form>
+    </section>
+
+
+  </div>
   
   <script src="index.js"></script>
   <script src="../scripts/barra.js"></script>

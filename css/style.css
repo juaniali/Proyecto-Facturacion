@@ -83,6 +83,13 @@ nav .navbar-links {
   margin: 5px 0;
 }
 
+.hidden{
+  display: none;
+}
+
+.show{
+  display: block;
+}
 
 @media only screen and (max-width: 850px) {
 
