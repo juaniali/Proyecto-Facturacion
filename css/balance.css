@@ -21,6 +21,9 @@ body {
     width: 80%;
     margin: 20px auto;
     background-color: #ddd;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
   }
   
   section {
@@ -44,7 +47,18 @@ body {
       background-color: #2980b9;
   }
   
-  
+#gastos{
+  flex:1 0 40%;
+}
+
+#ventasDia{
+  flex:1 0 40%;
+}
+
+#balance{
+  flex:1 0 80%;
+}
+
 #gastos form {
   display: flex;
   justify-content:start;
