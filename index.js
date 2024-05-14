@@ -15,6 +15,13 @@ inicioSesion.addEventListener('submit',(e)=>{
   let user = document.querySelector('#username');
   let pass = document.querySelector('#password');
 
+  if(userValido(user) && passValido(pass)){
+    document.querySelector('#content').classList.add('hide');
+    document.querySelector('#navegacion').classList.replace('hidden','show');
+    
+    location.href='/pages/mesas.html';
+  }
+
   if (campoVacio(user)) {
     document.querySelector('#userRequired').classList.replace('hidden','show');
   }else{
@@ -40,10 +47,7 @@ inicioSesion.addEventListener('submit',(e)=>{
     document.querySelector('#passValidate').classList.replace('hidden','show');
   }
 
-  if(userValido(user) && passValido(pass)){
-    document.querySelector('#navegacion').classList.replace('hidden','show');
-    location.href='/pages/mesas.html';
-  }
+  
    
 })
 
