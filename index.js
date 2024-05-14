@@ -14,11 +14,18 @@ inicioSesion.addEventListener('submit',(e)=>{
   e.preventDefault();
   let user = document.querySelector('#username');
   let pass = document.querySelector('#password');
-  console.log(inicioSesion);
+
   if (campoVacio(user)) {
     document.querySelector('#userRequired').classList.replace('hidden','show');
   }else{
     document.querySelector('#userRequired').classList.replace('show','hidden');
+  }
+
+  if(userValido(user) && !campoVacio(user)){
+    document.querySelector('#userValidate').classList.replace('show','hidden');
+    
+  }else{
+    document.querySelector('#userValidate').classList.replace('hidden','show');
   }
 
   if(campoVacio(pass)){
@@ -27,9 +34,17 @@ inicioSesion.addEventListener('submit',(e)=>{
     document.querySelector('#passRequired').classList.replace('show','hidden');
   }
 
-   if(campoVacio(user) && campoVacio(pass)){
-   }
+  if(passValido(pass) && !campoVacio(pass)){
+    document.querySelector('#passValidate').classList.replace('show','hidden');
+  }else{
+    document.querySelector('#passValidate').classList.replace('hidden','show');
+  }
 
+  if(userValido(user) && passValido(pass)){
+    document.querySelector('#navegacion').classList.replace('hidden','show');
+    location.href='/pages/mesas.html';
+  }
+   
 })
 
 function campoVacio(input){
@@ -39,16 +54,16 @@ function campoVacio(input){
   return false;
 }
 
-function validar(input){
-  if(input.name === "username"){
-    if(input.value != username){
-      return false;
-    }
+function userValido(input){
+  if(input.value != username){
+    return false;
   }
-  if(input.name === "password"){
-    if(input.value != password){
-      return false;
-    }
+  return true;
+}
+
+function passValido(input){
+  if (input.value != password){
+    return false;
   }
   return true;
 }
