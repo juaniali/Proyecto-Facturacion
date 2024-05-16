@@ -71,3 +71,60 @@ function mostrarVentasDelDia() {
   console.log('La función mostrarVentasDelDia se ha llamado correctamente');
   // Resto del código...
 }
+
+
+let productosBusqueda = [];
+
+async function consumirDb(){
+  try {
+    const db = await fetch('./../db/productos.json');
+    const data = await db.json();
+    productosBusqueda = data.productos;
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+consumirDb();
+const buscar = document.querySelector("#buscar-producto");
+
+const contenedorProductos= document.querySelector("#listado-productos");
+const fragmento= document.createDocumentFragment();
+
+
+buscar.addEventListener("keyup", () => {
+  const valorBuscado = buscar.value.toLowerCase();
+  const resultados =  productosBusqueda.filter( productosBusqueda => productosBusqueda.nombre.toLowerCase().includes(valorBuscado) );
+  limpiarProductos();
+  mostrarProductos(resultados);
+});
+
+function mostrarProductos(productosB){
+  
+  productosB.forEach( producto =>{
+    let li= document.createElement("li");
+    li.className= "tarjeta";
+    
+    let nombre= document.createElement("p");
+    nombre.textContent= producto.nombre;
+    li.appendChild(nombre);
+    
+    let precio= document.createElement("p");
+    precio.textContent= producto.precio;
+    li.appendChild(precio);
+
+    let imagen= document.createElement("img");
+    imagen.src= producto.img;
+    imagen.className= "imagen-tarjeta";
+    li.appendChild(imagen);
+
+    fragmento.appendChild(li);
+  });
+  contenedorProductos.appendChild(fragmento);
+}
+
+function limpiarProductos(){
+  while(contenedorProductos.firstChild){
+    contenedorProductos.removeChild(contenedorProductos.firstChild);
+  }
+}

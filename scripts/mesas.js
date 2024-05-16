@@ -32,9 +32,8 @@ buttonAbrirMesa.addEventListener('click', (e)=>{
 });
 
 //Buscar Procto------------------------------------------
+
 let productos = [];
-
-
 
 async function consumirDb(){
   try {
@@ -49,7 +48,7 @@ async function consumirDb(){
 consumirDb();
 const buscar = document.querySelector("#buscar-producto");
 
-const contenedorProductos= document.querySelector("#contenedor-productos");
+const contenedorProductos= document.querySelector("#listado-productos");
 const fragmento= document.createDocumentFragment();
 
 
@@ -89,13 +88,3 @@ function limpiarProductos(){
     contenedorProductos.removeChild(contenedorProductos.firstChild);
   }
 }
-
-/*
-<ul class="productos-tarjetas">
-  <li class="tarjeta" data-nombre="CrossaintJQ" data-cantidad="1" data-precio="1000">
-    <p>CrossaintJQ</p>
-    <h3>$1000</h3>
-    <img class="imagen-tarjeta" src="./../img/petr-magera-Dh9c2VBi8S0-unsplash.jpg" alt="">
-  </li>
-</ul>
-*/
