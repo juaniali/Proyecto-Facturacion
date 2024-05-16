@@ -39,10 +39,10 @@ header h1 {
 .productos-tarjetas {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(150px,1fr));
-    gap: 20px;
+    gap: 5px;
     background-color: #D9D9D9;
     max-height: 500px; 
-    overflow-y:auto;
+    overflow:scroll;
 }
     
 .productos-tarjetas div{
