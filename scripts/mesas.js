@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const ventaMesa = document.querySelector('#venta-mesa');
 
   const abrirMesaForm = document.getElementById('abrir-mesa-form');
+  const buttonAbrirMesa = document.getElementById('button-abrir-mesa');
   const cerrarMesaForm = document.getElementById('cerrar-mesa-form');
   
   const mesas = document.querySelectorAll('.mesa');
@@ -77,11 +78,16 @@ document.addEventListener('DOMContentLoaded', () => {
     mostrarMensaje('Venta cerrada', `Total de la venta: $${totalVenta.toFixed(2)}`);
     reiniciarFactura();
     capturarVenta(totalVenta); // Llamada a la función para almacenar el total de la venta
-
     // Reiniciar datos de la mesa
     mesasData[currentMesaId] = null;
-    abrirMesa.style.display = 'flex';
-    ventaMesa.style.display = 'none';
+    
+    setTimeout(()=>{
+      abrirMesa.style.display = 'flex';
+      ventaMesa.style.display = 'none';
+    },1000);
+    
+    
+    abrirMesaForm.reset();
   });
 
   // Buscar Producto ------------------------------------------
