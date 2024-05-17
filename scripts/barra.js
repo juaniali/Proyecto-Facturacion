@@ -65,7 +65,13 @@ function ocultarMensaje() {
 
 // Función para capturar y almacenar el total de la venta en la página de barra
 function capturarVenta(totalVenta) {
-  localStorage.setItem('ventaParcialBarra', totalVenta);
+  if (localStorage.getItem('ventaParcialBarra') == null) {
+    localStorage.setItem('ventaParcialBarra', totalVenta);
+  } else {
+    let acumulado = parseInt(localStorage.getItem('ventaParcialBarra'));
+    totalVenta += acumulado;
+    localStorage.setItem('ventaParcialBarra', totalVenta);
+  }
 }
 function mostrarVentasDelDia() {
   console.log('La función mostrarVentasDelDia se ha llamado correctamente');

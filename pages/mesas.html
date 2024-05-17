@@ -34,7 +34,6 @@
       <li><a class="nav-link" href="/pages/balance.html">Balance</a></li>
       <li><a class="nav-link" href="/pages/carga-datos.html">Carga de Datos</a></li>
     </ul>
-    <div id="content" class="page-transition">
       <header>
         <h1>Venta Salon</h1>
       </header>
@@ -50,44 +49,46 @@
     <section class="pagina-mesas centro" id="pagina-mesas">
       <section class="seccion-mesas">
         <div class="grid-mesas">
-          <button type="button" class="mesa Mesa-1">1</button>
-          <button type="button" class="mesa Mesa-2">2</button>
-          <button type="button" class="mesa Mesa-3">3</button>
-          <button type="button" class="mesa Mesa-4">4</button>
-          <button type="button" class="mesa Mesa-5">5</button>
-          <button type="button" class="mesa Mesa-6">6</button>
-          <button type="button" class="mesa Mesa-7">7</button>
-          <button type="button" class="mesa Mesa-8">8</button>
-          <button type="button" class="mesa Mesa-9">9</button>
-          <button type="button" class="mesa Mesa-10">10</button>
+          <button type="button" data-id="1" class="mesa Mesa-1">1</button>
+          <button type="button" data-id="2" class="mesa Mesa-2">2</button>
+          <button type="button" data-id="3" class="mesa Mesa-3">3</button>
+          <button type="button" data-id="4" class="mesa Mesa-4">4</button>
+          <button type="button" data-id="5" class="mesa Mesa-5">5</button>
+          <button type="button" data-id="6" class="mesa Mesa-6">6</button>
+          <button type="button" data-id="7" class="mesa Mesa-7">7</button>
+          <button type="button" data-id="8" class="mesa Mesa-8">8</button>
+          <button type="button" data-id="9" class="mesa Mesa-9">9</button>
+          <button type="button" data-id="10" class="mesa Mesa-10">10</button>
         </div>
       </section>
 
       <section class="formulario">
-        <form>
-          <section class="abrir-mesa" id="abrir-mesa">
+      
+        <section class="abrir-mesa" id="abrir-mesa">
+          <form id="abrir-mesa-form">
             <div class="campos">
               <h2>Abrir Mesa <span id="numero-mesa"></span></h2>
-              <input type="number" placeholder="Cantidad de personas" required>
+              <input type="number" id="personas" name="personas" placeholder="Cantidad de personas">
               <!-- <input type="text" placeholder="Nombre de Cliente"> -->
-              <input type="text" placeholder="Nombre de Camarero" required>
-              <input type="text" placeholder="Comentario">
-              <button type="button" id="button-abrir-mesa">Abrir mesa</button>
+              <input type="text" id="camarero" name="camarero" placeholder="Nombre de Camarero">
+              <input type="text" id="comentario" name="comentario" placeholder="Comentario">
+              <button type="submit" id="button-abrir-mesa">Abrir mesa</button>
             </div>
-          </section>
-
-          <section class="oculto venta-mesa" id="venta-mesa">
+          </form>
+        </section>
+      
+        <section class="oculto venta-mesa" id="venta-mesa">
+          <form id="cerrar-mesa-form">
             <div class="parrafo venta">
               <p>Venta de Mesa <span id="numero-mesa"></span></p>
             </div>
             <div class="campos">
               <div class="campo-form">
                 <input id="buscar-producto" type="text" placeholder="Buscar Producto">
-
                 <div class="productos-tarjetas" id="listado-productos">
-
+                  <!-- Lista de busqueda de productos -->
                 </div>
-
+      
                 <table id="factura">
                   <thead>
                     <tr>
@@ -98,9 +99,9 @@
                     </tr>
                   </thead>
                   <tbody>
-
+      
                   </tbody>
-
+      
                   <tfoot>
                     <tr>
                       <td colspan="3">Total</td>
@@ -108,17 +109,24 @@
                     </tr>
                   </tfoot>
                 </table>
-
+      
                 <div class="form-button">
+                  <button class="botonFactura botonVerde"   id="reiniciarMesa">Reiniciar Venta</button>
                   <button type="submit" id="form-button">Cerrar mesa</button>
                 </div>
 
+                <div id="cuadro" style="display: none;">
+                  <p id="mensaje">Mensaje aquí</p>
+                  <p id="totalVenta"></p>
+                  <button type="button" id="cerrarCuadro">Cerrar</button>
+                </div>
               </div>
-
-          </section>
-
-        </form>
-
+      
+      
+      
+          </form>
+        </section>
+      
       </section>
 
     </section>
