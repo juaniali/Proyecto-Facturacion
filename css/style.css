@@ -98,7 +98,10 @@ nav .navbar-links {
 .show{
   display: block;
 }
-
+.warn{
+  font-weight: bold;
+  color:red;
+}
 .content{
   margin: 10px 50%;
   display: flex;
