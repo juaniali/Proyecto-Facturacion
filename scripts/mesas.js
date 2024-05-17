@@ -213,7 +213,6 @@ document.addEventListener('DOMContentLoaded', () => {
       totalVenta += acumulado;
       localStorage.setItem('ventaParcialBarra', totalVenta);
     }
-
   }
 
   function mostrarVentasDelDia() {
