@@ -24,10 +24,10 @@ document.addEventListener('DOMContentLoaded', () => {
   function colorearBoton(event) {
     event.preventDefault();
     if (mesaSeleccionada) {
-      mesaSeleccionada.style.backgroundColor = '';
+      mesaSeleccionada.style.border = 'none';
     }
     const clickedMesa = event.currentTarget;
-    clickedMesa.style.backgroundColor = 'lightsalmon';
+    clickedMesa.style.border = '5px solid #db9834';
     mesaSeleccionada = clickedMesa;
     numeroMesa.innerText = clickedMesa.innerText;
   }
@@ -50,6 +50,9 @@ document.addEventListener('DOMContentLoaded', () => {
         mostrarProductosEnFactura(mesasData[currentMesaId].pedidos);
       }
     });
+    if(mesasData[currentMesaId]){
+      mesa.style.backgroundColor= '#45a049';
+    }
   });
 
   // Abrir Mesa ------------------------------------------
