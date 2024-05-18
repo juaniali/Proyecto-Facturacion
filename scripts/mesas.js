@@ -32,6 +32,9 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   mesas.forEach(mesa => {
+    if(mesasData[currentMesaId] != null){
+      mesa.style.backgroundColor= '#45a049';
+    }
     mesa.addEventListener('click', (event) => {
       colorearBoton(event);
       currentMesaId = mesa.getAttribute('data-id');
@@ -49,9 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
         mostrarProductosEnFactura(mesasData[currentMesaId].pedidos);
       }
     });
-    if(mesasData[currentMesaId]){
-      mesa.style.backgroundColor= '#45a049';
-    }
+    
   });
 
   // Abrir Mesa ------------------------------------------
@@ -77,18 +78,14 @@ document.addEventListener('DOMContentLoaded', () => {
     e.preventDefault();
 
     const totalVenta = parseFloat(document.getElementById('total').innerText.replace('$', ''));
-    mostrarMensaje('Venta cerrada', `Total de la venta: $${totalVenta.toFixed(2)}`);
     reiniciarFactura();
     capturarVenta(totalVenta); // Llamada a la función para almacenar el total de la venta
     // Reiniciar datos de la mesa
     mesasData[currentMesaId] = null;
     
-    setTimeout(()=>{
-      abrirMesa.style.display = 'flex';
-      ventaMesa.style.display = 'none';
-    },1000);
-    
-    
+    abrirMesa.style.display = 'flex';
+    ventaMesa.style.display = 'none';
+  
     abrirMesaForm.reset();
   });
 
@@ -174,6 +171,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function mostrarProductosEnFactura(pedidos) {
     pedidos.forEach(pedido => {
       const fila = document.createElement('tr');
+      fila.className= 'dato-factura';
       fila.innerHTML = `
       <td>${pedido.nombre}</td>
       <td>$${pedido.precio.toFixed(2)}</td>
