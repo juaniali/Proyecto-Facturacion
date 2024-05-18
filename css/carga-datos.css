@@ -1,3 +1,4 @@
+
 header h1 {
   margin: 0;
     font-size: 25px;
@@ -26,17 +27,32 @@ main {
 
 .form {
   padding: 25px;
+  border-radius: 5px;
 }
 
-.card_header {
+
+
+.card_header h1 {
   display: flex;
   align-items: center;
+   width: 94%;
+  font-size: 25px;
+  color: #fff; 
+  background-color: #3498db; 
+  padding: 10px 10px; 
+  border-radius: 5px; 
+  text-align: center; 
+  transition: background-color 0.3s ease; 
 }
 
+.card_header h1:hover {
+  background-color: #2980b9;
+}
+
+
+
 .card svg {
-  color: #7878bd;
-  margin-bottom: 20px;
-  margin-right: 5px;
+  margin-right: 10px;
 }
 
 .form_heading {
@@ -50,20 +66,25 @@ main {
 }
 
 .input {
-  border-radius: 5px;
-  background-color: #e6e6f1;
-  padding: 10px;
   width: 93%;
-  color: #7a7ab3;
-  border: 1px solid #dadaf7
+  padding: 10px;
+  margin-right: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  color: #333;
 }
 
 .input:focus-visible {
-  outline: 1px solid #aeaed6;
+  outline: none;
+  border-color: #007bff; 
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); 
 }
 
 .input::placeholder {
-  color: #bcbcdf;
+  color: #ccc;
 }
 
 label {
@@ -76,7 +97,7 @@ label {
 
 
 button {
-  background-color: #2bb943;
+  background-color: #4CAF50;
   margin-top: 10px;
   font-size: 20px;
   width: 98%;
@@ -90,11 +111,11 @@ button {
 }
 
 button:hover {
-  background-color: #208831;
+  background-color: #45a049;
 }
 
 .button2 {
-  background-color: #e53555;
+  background-color: #f44336;
   margin-top: 10px;
   font-size: 20px;
   width: 98%;
@@ -108,7 +129,7 @@ button:hover {
 }
 
 .button2:hover {
-  background-color: #b42b44;
+  background-color: #d32f2f;
   
 }
 
@@ -116,6 +137,49 @@ button:hover {
   color: transparent;
   cursor: pointer;
 }
+
+.footer-general{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 0 20px;
+  height: 70px;
+  background-color: #007bff;
+
+}
+
+.footer-seccion-nosotros{
+  text-align: left;
+  width: 25%;
+  }
+
+.footer-seccion-nosotros p {
+  font-size: 15px;
+}
+
+.centro-ayuda{
+  display: block;
+  align-items: end;
+color: #fff;
+}
+
+
+.footer-social{
+  width: 200px;
+  height: 80px;
+  font-size: 30px;
+  color: #fff;
+  font-size: 30px;
+  color: #fff;
+}
+
+
+.footer-contacto {
+  background-color: #1D0F0F;
+  color: #fff;
+}
+
 
 @media only screen and (max-width: 950px){
   main {

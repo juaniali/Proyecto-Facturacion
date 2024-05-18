@@ -5,9 +5,9 @@ body {
   }
   
   header h1 {
-    margin: 0;
-    font-size: 25px;
-    font-weight: 600;
+  margin: 0;
+  font-size: 25px;
+  font-weight: 600;
   background-color: #37489e;
   color: #fff;
   text-align: center;
@@ -124,11 +124,7 @@ body {
   section:nth-child(even) {
     background-color: #ffffff;
   }
-
-
-
   
-  /* Estilos específicos para el botón "Abrir Caja" */
 .abrirCaja {
   display: inline-block;
   width: 200px;
@@ -138,7 +134,7 @@ body {
   font-size: 18px;
   font-weight: bold;
   color: #fff;
-  background-color: #4CAF50; /* Verde */
+  background-color: #4CAF50;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -146,10 +142,10 @@ body {
 }
 
 .abrirCaja:hover {
-  background-color: #45a049; /* Verde más oscuro al pasar el cursor */
+  background-color: #45a049; 
 }
 
-/* Estilos específicos para el botón "Cerrar Caja" */
+
 .cerrarCaja {
   display: inline-block;
   width: 200px;
@@ -159,7 +155,7 @@ body {
   font-size: 18px;
   font-weight: bold;
   color: #fff;
-  background-color: #f44336; /* Rojo */
+  background-color: #f44336;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -167,11 +163,11 @@ body {
 }
 
 .cerrarCaja:hover {
-  background-color: #d32f2f; /* Rojo oscuro al pasar el cursor */
-  animation: pulse 1s infinite; /* Efecto de latido de corazón */
+  background-color: #d32f2f; 
+  animation: pulse 1s infinite; 
 }
 
-/* Efecto de latido de corazón */
+
 @keyframes pulse {
   0% { transform: scale(1); }
   50% { transform: scale(1.05); }
