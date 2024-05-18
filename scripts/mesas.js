@@ -150,28 +150,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   //Factura---------------------------------------------------
   function agregarProductoAFactura(nombre, precio) {
-    // Verificar si el producto ya está en la factura
-    const productosEnFactura = document.querySelectorAll('#factura tbody tr td:first-child');
-    for (let i = 0; i < productosEnFactura.length; i++) {
-      if (productosEnFactura[i].textContent === nombre) {
-        return; // Evitar duplicados
-      }
-    }
-
-    const fila = document.createElement('tr');
-    fila.innerHTML = `
-      <td>${nombre}</td>
-      <td>1</td>
-      <td>$${precio.toFixed(2)}</td>
-      <td>$${precio.toFixed(2)}</td>
-    `;
-    document.querySelector('#factura tbody').appendChild(fila);
-    actualizarTotalFactura(precio);
 
     // Agregar producto al array de pedidos de la mesa
     if (mesasData[currentMesaId]) {
       mesasData[currentMesaId].pedidos.push({ nombre, precio });
     }
+    reiniciarFactura();
+    mostrarProductosEnFactura(mesasData[currentMesaId].pedidos);
   }
 
   function actualizarTotalFactura(precioProducto) {
@@ -188,7 +173,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function mostrarProductosEnFactura(pedidos) {
     pedidos.forEach(pedido => {
-      agregarProductoAFactura(pedido.nombre, parseFloat(pedido.precio));
+      const fila = document.createElement('tr');
+      fila.innerHTML = `
+      <td>${pedido.nombre}</td>
+      <td>$${pedido.precio.toFixed(2)}</td>
+    `;
+      document.querySelector('#factura tbody').appendChild(fila);
+      actualizarTotalFactura(pedido.precio);
     });
   }
 
@@ -224,8 +215,4 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  function mostrarVentasDelDia() {
-    console.log('La función mostrarVentasDelDia se ha llamado correctamente');
-    // Resto del código...
-  }
 });

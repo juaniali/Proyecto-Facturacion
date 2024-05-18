@@ -72,57 +72,55 @@
               <!-- <input type="text" placeholder="Nombre de Cliente"> -->
               <input type="text" id="camarero" name="camarero" required placeholder="Nombre de Camarero" autocomplete="off">
               <input type="text" id="comentario" name="comentario" placeholder="Comentario" autocomplete="off">
-              <button type="submit" id="button-abrir-mesa">Abrir mesa</button>
+              <button type="submit" class="formateo-boton botonVerde" id="button-abrir-mesa">Abrir</button>
             
           </form>
         </section>
       
         <section class="oculto venta-mesa" id="venta-mesa">
           <form id="cerrar-mesa-form">
-            <div class="parrafo venta">
-              <p>Venta de Mesa <span id="numero-mesa"></span></p>
+          
+            <h2>Venta de Mesa <span id="numero-mesa"></span></h2>
+            <input id="buscar-producto" type="text" placeholder="Buscar Producto" autocomplete="off">
+            
+            <div class="productos-tarjetas" id="listado-productos">
+              <!-- Lista de busqueda de productos -->
             </div>
-            <div class="campos">
-              <div class="campo-form">
-                <input id="buscar-producto" type="text" placeholder="Buscar Producto" autocomplete="off">
-                <div class="productos-tarjetas" id="listado-productos">
-                  <!-- Lista de busqueda de productos -->
-                </div>
-      
-                <table id="factura">
-                  <thead>
-                    <tr>
-                      <th>Producto</th>
-                      <th>Precio Unitario</th>
-                      <th>Total</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-      
-                  </tbody>
-      
-                  <tfoot>
-                    <tr>
-                      <td colspan="3">Total</td>
-                      <td id="total">$0.00</td>
-                    </tr>
-                  </tfoot>
-                </table>
-      
-                <div class="form-button">
-                  <button class="botonFactura botonVerde"   id="reiniciarMesa">Reiniciar Venta</button>
-                  <button type="submit" id="form-button">Cerrar mesa</button>
-                </div>
+          
+            <table id="factura">
+              <thead>
+                <tr>
+                  <th>Producto</th>
+                  <th>Precio Unitario</th>
+                </tr>
+              </thead>
 
-                <div id="cuadro" style="display: none;">
-                  <p id="mensaje">Mensaje aquí</p>
-                  <p id="totalVenta"></p>
-                  <button type="button" id="cerrarCuadro">Cerrar</button>
-                </div>
-              </div>
-      
-      
-      
+              <tbody>
+                 <!--Contenido de la tabla  -->
+              </tbody>
+          
+              <tfoot>
+                <tr>
+                  <th colspan="3">Total</th>
+                  <th id="total">$0.00</th>
+                </tr>
+              </tfoot>
+            </table>
+          
+            <div class="form-button">
+              <button class="botonFactura botonVerde" id="reiniciarMesa">Reiniciar Venta</button>
+              <button type="submit" id="form-button">Cerrar mesa</button>
+            </div>
+          
+            <div id="cuadro" style="display: none;">
+              <p id="mensaje">Mensaje aquí</p>
+              <p id="totalVenta"></p>
+              <button type="button" id="cerrarCuadro">Cerrar</button>
+            </div>
+            </div>
+          
+          
+          
           </form>
         </section>
       

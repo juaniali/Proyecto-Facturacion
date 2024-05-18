@@ -36,7 +36,7 @@ header h1 {
   
   margin: 20px;
   padding: 20px;
-  background-color: #f0f0f0; 
+  background-color: #D9D9D9; 
   border-radius: 5px;
   
   display: grid; 
@@ -57,7 +57,8 @@ header h1 {
 
 .mesa{
   display: flex;
-  background-color: #3498db;
+  background-color: #2a7bb1;
+  color: #f0f0f0;
 
   border: none;
   border-radius: 10px;
@@ -66,6 +67,8 @@ header h1 {
 
   text-decoration: none;
   cursor: pointer;
+  font-size:xx-large;
+  font-weight: bold;
 }
 
 .abierta{
@@ -98,10 +101,8 @@ header h1 {
   justify-content: center;
   align-items: center;
 
- 
   width: auto;
   margin: 20px;
-  background-color: #f0f0f0; 
 }
 
 form{
@@ -112,7 +113,7 @@ form{
   background-color: #f0f0f0; 
   padding: 30px;
 
-  & input{
+  & input,div,table{
     width: 80%;
     padding: 10px;
     margin: 10px;
@@ -132,13 +133,44 @@ form{
 .abrir-mesa{
   min-height: 50%;
   min-width: 80%;
-  background-color: #3498db;
   display: flex;
   flex-direction: column;
   align-items: stretch;
   justify-content: center;
   margin: 5px;  
 }
+
+.formateo-boton {
+  padding: 10px 40px;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.botonVerde {
+  background-color: #4CAF50; 
+  color: white;
+}
+
+.botonVerde:hover {
+  background-color: #45a049; 
+}
+
+.botonRojo {
+  background-color: #f44336; 
+  color: white;
+}
+
+.botonRojo:hover {
+  background-color: #d32f2f; 
+}
+
 
 .oculto {
   display: none;

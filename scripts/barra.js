@@ -1,48 +1,47 @@
 const productos = document.querySelectorAll('.tarjeta');
 
 const buscar = document.querySelector("#buscar-producto");
-const fragmento= document.createDocumentFragment();
+const fragmento = document.createDocumentFragment();
 
 consumirDb();
-const contenedorProductos= document.querySelector("#listado-productos");
+const contenedorProductos = document.querySelector("#listado-productos");
 
 //Tarjetas de productos -----------------------------------------------
 productos.forEach(tarjeta => {
-    tarjeta.addEventListener('click', () => {
-        const nombre = tarjeta.getAttribute('data-nombre');
-        const cantidad = parseInt(tarjeta.getAttribute('data-cantidad'));
-        const precio = parseInt(tarjeta.getAttribute('data-precio'));
+  tarjeta.addEventListener('click', () => {
+    const nombre = tarjeta.getAttribute('data-nombre');
+    const precio = parseInt(tarjeta.getAttribute('data-precio'));
 
-        agregarProductoAFactura(nombre, cantidad, precio);
-    });
+    agregarProductoAFactura(nombre, precio);
+  });
 });
 
 function agregarProductoAFactura(nombre, precio) {
-    const fila = document.createElement('tr');
-    fila.innerHTML = `
+  const fila = document.createElement('tr');
+  fila.innerHTML = `
         <td>${nombre}</td>
         <td>$${precio.toFixed(2)}</td>
     `;
-    document.querySelector('#factura tbody').appendChild(fila);
-    actualizarTotalFactura(precio);
+  document.querySelector('#factura tbody').appendChild(fila);
+  actualizarTotalFactura(precio);
 }
 
 //Factura----------------------------------------------------------------
 function actualizarTotalFactura(precioProducto) {
-    const totalElemento = document.getElementById('total');
-    let total = parseFloat(totalElemento.innerText.replace('$', ''));
-    total += precioProducto;
-    totalElemento.innerText = `$${total.toFixed(2)}`;
+  const totalElemento = document.getElementById('total');
+  let total = parseFloat(totalElemento.innerText.replace('$', ''));
+  total += precioProducto;
+  totalElemento.innerText = `$${total.toFixed(2)}`;
 }
 
 function reiniciarFactura() {
-    document.querySelector('#factura tbody').innerHTML = '';
-    document.getElementById('total').innerText = '$0.00';
+  document.querySelector('#factura tbody').innerHTML = '';
+  document.getElementById('total').innerText = '$0.00';
 }
 
 document.getElementById('reiniciarMesa').addEventListener('click', () => {
-    reiniciarFactura();
-    mostrarMensaje('Venta Restaurada');
+  reiniciarFactura();
+  mostrarMensaje('Venta Restaurada');
 });
 
 document.getElementById('cerrarMesa').addEventListener('click', () => {
@@ -54,19 +53,19 @@ document.getElementById('cerrarMesa').addEventListener('click', () => {
 
 //Cuadro-------------------------------------------------------------------
 document.getElementById('cerrarCuadro').addEventListener('click', () => {
-    ocultarMensaje();
+  ocultarMensaje();
 });
 
 function mostrarMensaje(mensaje, detalle = '') {
-    const cuadro = document.getElementById('cuadro');
-    cuadro.style.display = 'block';
-    document.getElementById('mensaje').innerText = mensaje;
-    document.getElementById('totalVenta').innerText = detalle;
-    document.getElementById('totalVenta').style.display = detalle ? 'block' : 'none';
+  const cuadro = document.getElementById('cuadro');
+  cuadro.style.display = 'block';
+  document.getElementById('mensaje').innerText = mensaje;
+  document.getElementById('totalVenta').innerText = detalle;
+  document.getElementById('totalVenta').style.display = detalle ? 'block' : 'none';
 }
 
 function ocultarMensaje() {
-    document.getElementById('cuadro').style.display = 'none';
+  document.getElementById('cuadro').style.display = 'none';
 }
 
 // Función para capturar y almacenar el total de la venta en la página de barra
@@ -136,8 +135,8 @@ function mostrarProductos(productos) {
   contenedorProductos.appendChild(fragmento);
 }
 
-function limpiarProductos(){
-  while(contenedorProductos.firstChild){
+function limpiarProductos() {
+  while (contenedorProductos.firstChild) {
     contenedorProductos.removeChild(contenedorProductos.firstChild);
   }
 }
