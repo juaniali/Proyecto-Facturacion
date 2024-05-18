@@ -263,7 +263,9 @@ h2{
   align-items: stretch;
   justify-content: center;
   margin: 5px;  
+
 }
+  
 
 
 .venta{
@@ -295,7 +297,10 @@ h2{
 }
 
 @media only screen and (max-width: 600px){
-  
+  .pagina-mesas{
+    overflow: scroll;
+  }
+
   .seccion-mesas{
     height: 50vh;
     width: 100%;
@@ -304,6 +309,7 @@ h2{
   .grid-mesas{
     height: 300px;
     width: 250px;
+    padding: 30px;
   }
 
   .mesa{
@@ -312,6 +318,35 @@ h2{
   }
 
   .Mesa-2{
-    height: 130px;
+    height: 79px;
+  }
+
+  .formulario{
+    height: 50vh;
+    width: 100%;
+    
+  }
+  .abrir-mesa{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  form{
+    margin: 0;
+    width: 250px;
+    overflow: scroll;
+  }
+
+  .venta-mesa{
+    height: 50vh;
+    width: 100%;
+  }
+  .tarjeta {
+    height: 6.5rem;
+    width: 6.5rem;
+  }
+  .nombre-producto{
+    height: 10%;
+    font-size: 16px;
   }
 }
