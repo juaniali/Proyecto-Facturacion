@@ -3,7 +3,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const ventaMesa = document.querySelector('#venta-mesa');
 
   const abrirMesaForm = document.getElementById('abrir-mesa-form');
-  const buttonAbrirMesa = document.getElementById('button-abrir-mesa');
   const cerrarMesaForm = document.getElementById('cerrar-mesa-form');
   
   const mesas = document.querySelectorAll('.mesa');
@@ -149,6 +148,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  //Factura---------------------------------------------------
   function agregarProductoAFactura(nombre, precio) {
     // Verificar si el producto ya está en la factura
     const productosEnFactura = document.querySelectorAll('#factura tbody tr td:first-child');
