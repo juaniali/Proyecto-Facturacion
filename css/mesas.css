@@ -12,8 +12,8 @@ header h1 {
 
 .pagina-mesas{
   display: flex;
-  align-items:center;
-  justify-content: space-around;
+  
+  overflow: hidden;
 }
 
 /*Dibujo de las mesas--------------------*/
@@ -22,12 +22,14 @@ header h1 {
   margin: 0;
   padding: 0;
 
-  height: 80vh;
-  width: 40rem;
+  height: 100vh;
+  width: 50%;
 
   display: flex;
+  flex-wrap: wrap;
+  
   justify-content: center;
-  align-items: center;
+  align-items: center;  
 }
 
 .grid-mesas {
@@ -36,7 +38,7 @@ header h1 {
   
   margin: 20px;
   padding: 20px;
-  background-color: #D9D9D9; 
+  background-color: #f0f0f0; 
   border-radius: 5px;
   
   display: grid; 
@@ -101,8 +103,10 @@ header h1 {
   justify-content: center;
   align-items: center;
 
-  width: auto;
-  margin: 20px;
+  width: 50%;
+  height: 100vh;
+  margin: 20px; 
+  padding: 20px;
 }
 
 form{
@@ -140,6 +144,11 @@ form{
 }
 
 /*Botones-------------------------------------------------------*/
+.form-button{
+  display: flex;
+  justify-content: space-around;
+}
+
 .formateo-boton {
   padding: 10px 40px;
   font-size: 16px;
@@ -286,8 +295,23 @@ h2{
 }
 
 @media only screen and (max-width: 600px){
+  
+  .seccion-mesas{
+    height: 50vh;
+    width: 100%;
+  }
+  
   .grid-mesas{
-    height: 200px;
-    width: 150px;
+    height: 300px;
+    width: 250px;
+  }
+
+  .mesa{
+    height: 65px;
+    width: 65px;
+  }
+
+  .Mesa-2{
+    height: 130px;
   }
 }
