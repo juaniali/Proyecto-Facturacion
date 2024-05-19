@@ -138,47 +138,6 @@ button:hover {
   cursor: pointer;
 }
 
-.footer-general{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  padding: 0 20px;
-  height: 70px;
-  background-color: #007bff;
-
-}
-
-.footer-seccion-nosotros{
-  text-align: left;
-  width: 25%;
-  }
-
-.footer-seccion-nosotros p {
-  font-size: 15px;
-}
-
-.centro-ayuda{
-  display: block;
-  align-items: end;
-color: #fff;
-}
-
-
-.footer-social{
-  width: 200px;
-  height: 80px;
-  font-size: 30px;
-  color: #fff;
-  font-size: 30px;
-  color: #fff;
-}
-
-
-.footer-contacto {
-  background-color: #1D0F0F;
-  color: #fff;
-}
 
 
 @media only screen and (max-width: 950px){
