@@ -310,18 +310,18 @@ h2{
   }
   
   .grid-mesas{
-    height: 300px;
-    width: 250px;
-    padding: 30px;
+    height: 350px;
+    width: 280px;
+    padding: 15px;
   }
 
   .mesa{
-    height: 65px;
-    width: 65px;
+    height: 60px;
+    width: 60px;
   }
 
   .Mesa-2{
-    height: 79px;
+    height: 86px;
   }
 
   .formulario{
@@ -336,20 +336,33 @@ h2{
   }
   form{
     margin: 0;
-    width: 250px;
+    width: 280px;
     overflow: scroll;
+    padding: 5px;
   }
 
   .venta-mesa{
     height: 50vh;
     width: 100%;
+    align-items: center;
+    justify-content: center;
   }
   .tarjeta {
-    height: 6.5rem;
-    width: 6.5rem;
+    height: 6rem;
+    width: 6rem;
   }
   .nombre-producto{
     height: 10%;
     font-size: 16px;
+  }
+
+  .productos-tarjetas{
+    align-items: center;
+    justify-content: center;
+  }
+
+  .formateo-boton{
+    padding: 5px 20px;
+    margin: 10px 5px;
   }
 }
