@@ -187,3 +187,16 @@ section:nth-child(even) {
   display: block;
   margin: 10px auto;
 }
+
+
+@media only screen and (max-width: 750px){
+
+main{
+  display: block;
+  }
+  
+  #gastos input {
+    width: 70vw;
+    margin-bottom: 10px;
+    }
+}

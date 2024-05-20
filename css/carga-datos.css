@@ -138,6 +138,8 @@ button:hover {
   cursor: pointer;
 }
 
+/* boton y form de centro ayuda agregar al footer*/
+
 .boton-centro-ayuda {
   width: fit-content;
   padding: 5px 10px;
@@ -231,6 +233,16 @@ label {
    padding: 0;
    padding-left: 6px;
    margin-bottom: 30px;
+}
+.boton-centro-ayuda  { /* agregar al index footer*/
+  margin-bottom: 10px;
+}
+
+.social-icons{/* agregar al index footer*/
+  margin-bottom: 10px;
+}
+.footer-seccion-nosotros{/* agregar al index footer*/
+   display: none;
 }
 
  }
