@@ -31,3 +31,5 @@ formularioAyuda.addEventListener('submit', (event) => {
    
     modalAyuda.style.display = 'none';
 });
+
+

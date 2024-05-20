@@ -121,7 +121,25 @@
 
                 <label for="correo-electronico">Correo Electrónico:</label>
                 <input class="nombre" type="email"  name="correo-electronico" required>
-
+                <div>
+                  <label for="motivo">Motivo de Contacto:</label>
+                  <select id="motivo" name="motivo" required>
+                      <option value="">Selecciona un motivo</option>
+                      <option value="consulta">Consulta</option>
+                      <option value="soporte">Soporte técnico</option>
+                      <option value="comentario">Administrativo</option>
+                  </select>
+              </div>
+              <div id="prefEmail">
+                  <label>Preferencias de contacto:</label><br>
+                  <label><input type="checkbox" id="prefEmail" name="prefEmail"> Email</label>
+                  <label><input type="checkbox" id="prefTelefono" name="prefTelefono"> Teléfono</label>
+                  <label><input type="checkbox" id="redesSociales" name="redesSociales"> Redes Sociales</label>
+              </div>
+              <div>
+                  <label for="imagen">Adjuntar Imagen:</label>
+                  <input type="file" id="imagen" name="imagen">
+              </div>
                 <label for="mensaje">Mensaje:</label>
                 <textarea class="nombre" name="mensaje" required></textarea>
 
