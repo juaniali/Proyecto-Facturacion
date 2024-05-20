@@ -24,7 +24,7 @@ body {
   font-size: 3rem;
   font-weight: bold;
   position: absolute;
-  top: 200px;
+  top: 20vh;
 
 }
 
@@ -277,6 +277,12 @@ nav .navbar-links {
   .navbar-links li svg {
     font-size: 30px;
     color: #e1e4e8;
+  }
+
+  .logo {
+   font-size: 2rem;
+    top: 15vh;
+  
   }
 
 }
