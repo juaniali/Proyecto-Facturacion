@@ -11,6 +11,7 @@
   height: 10%;
   width: 100%;
   background-color: #646f77;
+  color: white;
 }
 
 .footer-seccion-nosotros{
@@ -25,7 +26,9 @@
 .centro-ayuda{
   display: block;
   align-items: end;
-color: #fff;
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
 }
 
 
@@ -33,13 +36,16 @@ color: #fff;
   width: 200px;
   height: 80px;
   font-size: 30px;
-  color: #fff;
-  font-size: 30px;
-  color: #fff;
+  
 }
 
-
-.footer-contacto {
-  background-color: #1D0F0F;
-  color: #fff;
+.social-icons{
+  width: 200px;
+  font-size: 20px;;
 }
+
+.social-icons a {
+  margin-right: 10px;
+  text-decoration: none; 
+}
+
