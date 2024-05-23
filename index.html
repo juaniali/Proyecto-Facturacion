@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./css/normalize.css">
   <link rel="stylesheet" href="./css/style.css">
-  <link rel="icon" href="./img/LOGO.png" type="imagen">
+  <link rel="icon" href="./img/LOGO.png" type="image/png" subtype="png" >
   <title>Sistema de facturacion</title>
 </head>
 
@@ -18,8 +18,10 @@
       <li><a class="nav-link" href="/pages/barra.html">Barra</a></li>
       <li><a class="nav-link" href="/pages/balance.html">Balance</a></li>
       <li><a class="nav-link" href="/pages/carga-datos.html">Producto</a></li>
-    </ul>
+      
+      </ul>
 
+      
     <div class="Burguer">
       <div class="line"></div>
       <div class="line"></div>
@@ -77,13 +79,35 @@
           <span class="boton-cerrar">&times;</span>
           <h2 class="formularioh2">Formulario de Contacto</h2>
           <form class="formulario-ayuda">
-            <label for="nombre">Nombre:</label>
+            <label for="nombre" id="nombre">Nombre:</label>
             <input class="nombre" type="text" name="nombre" required>
 
-            <label for="correo-electronico">Correo Electrónico:</label>
+            <label for="correo-electronico" id="correo-electronico">Correo Electrónico:</label>
             <input class="nombre" type="email" name="correo-electronico" required>
+            <label for="metodo-contacto">Por que razon nos contacta:</label>
+            <select id="metodo-contacto" name="metodo-contacto">
+                <option value="telefono">Problemas tecnicos</option>
+                <option value="email">Adminstrativo</option>
+                <option value="whatsapp">Comerciales</option>
+            </select>
+            
+            <h4 class="formularioh2">Metodo de Contacto</h4>
+            <label>
+              <input type="checkbox" name="metodo" value="telefono">
+              Teléfono
+          </label>
+          <br>
+          <label>
+              <input type="checkbox" name="metodo" value="email">
+              Email
+          </label>
+          <br>
+          <label>
+              <input type="checkbox" name="metodo" value="whatsapp">
+              WhatsApp
+          </label>
 
-            <label for="mensaje">Mensaje:</label>
+            <h4 for="mensaje" id="mensaje">Mensaje:</h4>
             <textarea class="nombre" name="mensaje" required></textarea>
 
             <button type="submit" class="enviar">Enviar</button>

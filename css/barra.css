@@ -135,18 +135,34 @@ header h1 {
   width: 100%;
   border-collapse: collapse;
   font-family: Arial, sans-serif;
-
 }
 
-thead {
-  height: 30px;
-}
-
-#factura th,
-#factura td {
+#factura th, #factura td {
   border: 1px solid #ddd;
-  padding-left: 5px;
+  padding: 8px; /* Asegúrate de que el padding sea uniforme */
   text-align: left;
+  box-sizing: border-box; /* Asegúrate de que el padding no afecte el ancho de las celdas */
+}
+
+#factura th {
+  background-color: #f2f2f2;
+}
+
+#factura tfoot td {
+  font-weight: bold;
+ 
+}
+
+#factura tbody tr:first-child {
+  background-color: #f9f9f9;
+}
+
+#factura tbody tr:nth-child(odd) {
+  background-color: #f2f2f2;
+}
+
+#factura tbody tr:hover {
+  background-color: #ddd;
 }
 
 .tdHeight {

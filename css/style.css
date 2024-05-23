@@ -121,6 +121,8 @@ nav .navbar-links {
   margin: 0;
 }
 
+
+
 .navbar-links li a {
   height: 100%;
   text-decoration: none;
@@ -137,6 +139,10 @@ nav .navbar-links {
   border-bottom: 3px solid #aeb4ac;
 }
 
+#cerrarSesion:hover {
+ 
+  border-bottom: 3px solid #f30b0b;
+    }
 .page-transition {
   animation: aparecer 0.5s ease;
 }
@@ -258,6 +264,9 @@ nav .navbar-links {
     margin: 5px;
     padding: 5px;
   }
+  
+  
+
 
   nav {
     height: 0;
@@ -370,11 +379,12 @@ nav .navbar-links {
   position: fixed;
   z-index: 1;
   left: 0;
-  top: 0;
+  top: 0px;
   width: 100%;
   height: 100%;
-  overflow: auto;
+  overflow:auto;
   background-color: rgba(0, 0, 0, 0.4);
+  
 }
 
 .contenido-modal {
@@ -386,7 +396,11 @@ nav .navbar-links {
   max-width: 500px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
-
+.boton-cerrar{
+  color: #5d5f62;
+  font-size: 30px;
+  text-align: end;
+}
 
 
 label {
@@ -415,6 +429,7 @@ label {
 .enviar:hover {
   background-color: #0056b3;
 }
+
 
 
 @media only screen and (max-width: 750px) {

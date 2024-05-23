@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="./../css/normalize.css">
   <link rel="stylesheet" href="./../css/style.css">
   <link rel="stylesheet" href="./../css/balance.css">
-  <link rel="stylesheet" href="./../css/footer.css">
+  <link rel="icon" type="image/png" href="./../img/LOGO.png"/>
   <title>Sistema de facturacion</title>
 </head>
 
@@ -29,6 +29,7 @@
       <li><a class="nav-link" href="/pages/barra.html">Barra</a></li>
       <li><a class="nav-link" href="/pages/balance.html">Balance</a></li>
       <li><a class="nav-link" href="/pages/carga-datos.html">Carga de Datos</a></li>
+      <li><a class="nav-link" href="/index.html">Cerrar Sesión</a></li>
     </ul>
 
     <div class="Burguer">
@@ -100,8 +101,30 @@
 
             <label for="correo-electronico">Correo Electrónico:</label>
             <input class="nombre" type="email" name="correo-electronico" required>
+            <label for="metodo-contacto">Por que razon nos contacta:</label>
+            <select id="metodo-contacto" name="metodo-contacto">
+                <option value="telefono">Problemas tecnicos</option>
+                <option value="email">Adminstrativo</option>
+                <option value="whatsapp">Comerciales</option>
+            </select>
+            
+            <h4 class="formularioh2">Metodo de Contacto</h4>
+            <label>
+              <input type="checkbox" name="metodo" value="telefono">
+              Teléfono
+          </label>
+          <br>
+          <label>
+              <input type="checkbox" name="metodo" value="email">
+              Email
+          </label>
+          <br>
+          <label>
+              <input type="checkbox" name="metodo" value="whatsapp">
+              WhatsApp
+          </label>
 
-            <label for="mensaje">Mensaje:</label>
+            <h4 for="mensaje">Mensaje:</h4>
             <textarea class="nombre" name="mensaje" required></textarea>
 
             <button type="submit" class="enviar">Enviar</button>
