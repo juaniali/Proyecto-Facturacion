@@ -128,54 +128,42 @@
     </section>
   </main>
 
+
   <footer>
     <div class="footer-general">
       <div class="footer-seccion-nosotros">
-        <p><strong>Sobre Nosotros</strong><br>Somos una empresa dedicada a ofrecer los mejores servicios de
-          consultoría
+        <p><strong>Sobre Nosotros</strong><br>Somos una empresa dedicada a ofrecer los mejores servicios de consultoría
           tecnológica.</p>
 
       </div>
       <button class="boton-centro-ayuda">Centro de ayuda</button>
 
       <div class="modal-ayuda modal">
+
         <div class="contenido-modal">
+
           <span class="boton-cerrar">&times;</span>
           <h2 class="formularioh2">Formulario de Contacto</h2>
-          <form class="formulario-ayuda">
-            <label for="nombre" id="imputNombre">Nombre:</label>
-            <input class="nombre requerido" type="text" name="nombre">
-            <label for="correo-electronico" id="corre">Correo Electrónico:</label>
-            <input class="nombre" type="email" name="correo-electronico">
+          <form class="formulario-ayuda" id="contacto-form">
 
-            <label for="metodo-contacto">Por que razon nos contacta:</label>
-            <select id="metodo-contacto" name="metodo-contacto">
-              <option value="">Seleccione una opción</option>
-              <option value="telefono">Problemas tecnicos</option>
-              <option value="email">Adminstrativo</option>
-              <option value="whatsapp">Comerciales</option>
+            <input type="text" name="nombre" id="nombre-contacto" placeholder="Nombre">
+
+            <input type="email" name="email" id="email-contacto" placeholder="Email">
+
+            <label for="motivo">Motivo del contacto:</label>
+            <select class="formateo-boton" id="motivo-contacto" name="motivo">
+              <option value="">Seleccionar Opcion</option>
+              <option value="tecnico">Problemas tecnicos</option>
+              <option value="administrativo">Adminstrativo</option>
+              <option value="comercial">Comercial</option>
             </select>
 
-            <h4 class="formularioh2">Metodo de Contacto</h4>
-            <label>
-              <input type="checkbox" name="metodo" value="telefono">
-              Teléfono
-            </label>
-            <br>
+            <h4 class="formularioh2">Es usted usuario de nuestros productos?</h4>
+            <input type="checkbox" id="cliente-contacto" value="cliente">
+            <label for="cliente">Soy cliente</label>
 
-            <label>
-              <input type="checkbox" name="metodo" value="email">
-              Email
-            </label>
-            <br>
-
-            <label>
-              <input type="checkbox" name="metodo" value="whatsapp">
-              WhatsApp
-            </label>
-
-            <h4 for="mensaje" id="mensaje">Mensaje:</h4>
-            <textarea class="nombre" name="mensaje"></textarea>
+            <textarea class="mensaje" name="mensaje" id="mensaje-contacto"
+              placeholder="Escriba aquí su consulta."></textarea>
 
             <button type="submit" class="enviar">Enviar</button>
           </form>
@@ -208,6 +196,7 @@
       </div>
     </div>
   </footer>
+
   <script src="../index.js"></script>
   <script src="../scripts/mesas.js"></script>
   <script src="./../scripts/footer.js"></script>
