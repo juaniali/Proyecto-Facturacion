@@ -1,11 +1,12 @@
-header{
+header {
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0;
   padding: 5px;
   background-color: #6c3996;
-} 
+}
+
 h1 {
   font-size: 25px;
   font-weight: 600;
@@ -17,7 +18,7 @@ h1 {
 
 section {
   display: flex;
-  justify-content:space-evenly;
+  justify-content: space-evenly;
   margin: 20px;
 }
 
@@ -46,12 +47,12 @@ section {
   justify-content: center;
   width: 100%;
   font-size: 25px;
-  color: #fff; 
-  background-color: #3498db; 
-  padding: 10px 10px; 
-  border-radius: 5px; 
-  text-align: center; 
-  transition: background-color 0.3s ease; 
+  color: #fff;
+  background-color: #3498db;
+  padding: 10px 10px;
+  border-radius: 5px;
+  text-align: center;
+  transition: background-color 0.3s ease;
 }
 
 .card_header h1:hover {
@@ -72,7 +73,7 @@ section {
   width: 100%;
 }
 
-.form-button{
+.form-button {
   display: flex;
   justify-content: space-around;
 }
@@ -91,8 +92,8 @@ section {
 
 .input:focus-visible {
   outline: none;
-  border-color: #007bff; 
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); 
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
 
 .input::placeholder {
@@ -135,22 +136,23 @@ label {
 }
 
 .botonVerde {
-  background-color: #4CAF50; 
+  background-color: #4CAF50;
   color: white;
 }
 
 .botonVerde:hover {
-  background-color: #45a049; 
+  background-color: #45a049;
 }
 
 .botonRojo {
-  background-color: #f44336; 
+  background-color: #f44336;
   color: white;
 }
 
 .botonRojo:hover {
-  background-color: #d32f2f; 
+  background-color: #d32f2f;
 }
+
 .custom-file-input {
   color: transparent;
   cursor: pointer;
@@ -160,11 +162,9 @@ label {
 
 
 
-@media only screen and (max-width: 950px){
+@media only screen and (max-width: 950px) {
   main {
     gap: 5%;
-    margin-left: 5%;
-    margin-right: 5%;
   }
 }
 
@@ -172,15 +172,12 @@ label {
   main {
     display: block;
     flex-direction: column;
+    height: 80%;
   }
 
   .form {
     width: 100%;
-   padding: 0;
-   padding-left: 6px;
-   margin-bottom: 30px;
-}
+    padding: 10px;
+  }
 
 }
-
-

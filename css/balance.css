@@ -195,4 +195,8 @@ section:nth-child(even) {
     width: 70vw;
     margin-bottom: 10px;
   }
+
+  .datos{
+    flex-direction: column;
+  }
 }

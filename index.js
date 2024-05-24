@@ -1,10 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
-  
   const burguer = document.querySelector(".Burguer");
   const inicioSesion = document.querySelector("#inicioSesion");
   const username = 'abc123';
   const password = 'abc123';
   const navBarLinks = document.querySelector(".navbar-links");
+
+  if(!navBarLinks.classList.contains('active')){
+    navBarLinks.classList.toggle("active");
+  }
 
   const letters = document.querySelectorAll('.letter');
   letters.forEach((letter, index) => {

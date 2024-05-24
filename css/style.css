@@ -442,8 +442,8 @@ textarea {
     height: 200px;
     width: 170px;
 
-    top: 5px;
-    left: 60px;
+    top: 60px;
+    left: 5px;
 
     border-radius: 5px;
     background-color: #666666;
@@ -460,9 +460,6 @@ textarea {
     margin: 5px;
     padding: 5px;
   }
-
-
-
 
   nav {
     height: 0;
