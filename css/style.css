@@ -198,6 +198,19 @@ nav .navbar-links {
   }
 }
 
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+  100% { transform: translateX(0); }
+}
+
+.shake {
+  border: 1px solid red;
+  animation: shake 0.5s;
+}
+
 .navbar-links li svg {
   font-size: 60px;
   color: #e1e4e8;
@@ -290,7 +303,6 @@ footer{
 .social-icons {
   width: 200px;
   font-size: 20px;
-  ;
 }
 
 .social-icons a {
@@ -322,6 +334,8 @@ footer{
   color: #0056b3;
 }
 
+
+
 .modal {
   display: none;
   position: fixed;
@@ -334,6 +348,10 @@ footer{
   background-color: rgba(0, 0, 0, 0.4);
 
 }
+.formulario-ayuda{
+  display: flex;
+  flex-direction: column;
+}
 
 .contenido-modal {
   background-color: white;
@@ -345,24 +363,26 @@ footer{
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
+.requerido{
+  border: 1px solid red;
+}
+
 .boton-cerrar {
+  position:relative;
+  left: 95%;
+  
   color: #5d5f62;
   font-size: 30px;
   text-align: end;
 }
 
-
-label {
-  display: block;
-  margin-top: 10px;
+textarea{
+  border: 1px solid #ccc;
 }
-
-.nombre,
-textarea {
+.mensaje{
   width: 100%;
   padding: 8px;
   margin-top: 5px;
-  border: 1px solid #ccc;
   border-radius: 4px;
 }
 

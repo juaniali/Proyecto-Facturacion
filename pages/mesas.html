@@ -144,12 +144,13 @@
           <h2 class="formularioh2">Formulario de Contacto</h2>
           <form class="formulario-ayuda">
             <label for="nombre" id="imputNombre">Nombre:</label>
-            <input class="nombre" type="text" name="nombre" required>
-
+            <input class="nombre requerido" type="text" name="nombre">
             <label for="correo-electronico" id="corre">Correo Electrónico:</label>
-            <input class="nombre" type="email" name="correo-electronico" required>
+            <input class="nombre" type="email" name="correo-electronico">
+
             <label for="metodo-contacto">Por que razon nos contacta:</label>
             <select id="metodo-contacto" name="metodo-contacto">
+              <option value="">Seleccione una opción</option>
               <option value="telefono">Problemas tecnicos</option>
               <option value="email">Adminstrativo</option>
               <option value="whatsapp">Comerciales</option>
@@ -161,18 +162,20 @@
               Teléfono
             </label>
             <br>
+
             <label>
               <input type="checkbox" name="metodo" value="email">
               Email
             </label>
             <br>
+
             <label>
               <input type="checkbox" name="metodo" value="whatsapp">
               WhatsApp
             </label>
 
             <h4 for="mensaje" id="mensaje">Mensaje:</h4>
-            <textarea class="nombre" name="mensaje" required></textarea>
+            <textarea class="nombre" name="mensaje"></textarea>
 
             <button type="submit" class="enviar">Enviar</button>
           </form>

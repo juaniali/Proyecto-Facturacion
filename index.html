@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./css/normalize.css">
   <link rel="stylesheet" href="./css/style.css">
-  <link rel="icon" href="./img/LOGO.png" type="image/png" subtype="png" >
+  <link rel="icon" href="./img/LOGO.png" type="image/png" subtype="png">
   <title>Sistema de facturacion</title>
 </head>
 
@@ -18,7 +18,7 @@
       <li><a class="nav-link" href="/pages/mesas.html">Mesas</a></li>
       <li><a class="nav-link" href="/pages/barra.html">Barra</a></li>
       <li><a class="nav-link" href="/pages/balance.html">Balance</a></li>
-      <li><a class="nav-link" href="/pages/carga-datos.html">Producto</a></li>  
+      <li><a class="nav-link" href="/pages/carga-datos.html">Producto</a></li>
     </ul>
 
     <div class="Burguer">
@@ -79,37 +79,41 @@
         <div class="contenido-modal">
           <span class="boton-cerrar">&times;</span>
           <h2 class="formularioh2">Formulario de Contacto</h2>
-          <form class="formulario-ayuda">
+          <form class="formulario-ayuda" id="contacto-form">
             <label for="nombre" id="nombre">Nombre:</label>
-            <input class="nombre" type="text" name="nombre" required>
+            <input class="nombre" type="text" id="nombre" required>
 
             <label for="correo-electronico" id="correo-electronico">Correo Electrónico:</label>
-            <input class="nombre" type="email" name="correo-electronico" required>
-            <label for="metodo-contacto">Por que razon nos contacta:</label>
-            <select id="metodo-contacto" name="metodo-contacto">
-                <option value="telefono">Problemas tecnicos</option>
-                <option value="email">Adminstrativo</option>
-                <option value="whatsapp">Comerciales</option>
-            </select>
+            <input class="nombre" type="email" id="correo-electronico" required>
             
+            <label for="metodo-contacto">Por que razon nos contacta:</label>
+            <select id="metodo-contacto" id="metodo-contacto">
+              <option value="">Seleccione una opción</option>
+              <option value="telefono">Problemas tecnicos</option>
+              <option value="email">Adminstrativo</option>
+              <option value="whatsapp">Comerciales</option>
+            </select>
+
             <h4 class="formularioh2">Metodo de Contacto</h4>
             <label>
-              <input type="checkbox" name="metodo" value="telefono">
+              <input type="checkbox" id="metodo-tel" value="telefono">
               Teléfono
-          </label>
-          <br>
-          <label>
-              <input type="checkbox" name="metodo" value="email">
+            </label>
+
+            <br>
+            <label>
+              <input type="checkbox" id="metodo-email" value="email">
               Email
-          </label>
-          <br>
-          <label>
-              <input type="checkbox" name="metodo" value="whatsapp">
+            </label>
+            
+            <br>
+            <label>
+              <input type="checkbox" id="metodo-whatsapp" value="whatsapp">
               WhatsApp
-          </label>
+            </label>
 
             <h4 for="mensaje" id="mensaje">Mensaje:</h4>
-            <textarea class="nombre" name="mensaje" required></textarea>
+            <textarea class="nombre" id="mensaje" required></textarea>
 
             <button type="submit" class="enviar">Enviar</button>
           </form>
@@ -144,7 +148,8 @@
   </footer>
 
   <script src="index.js"></script>
-  <script src="../scripts/barra.js"></script>
+  <script src="./scripts/barra.js"></script>
+  <script src="./scripts/footer.js"></script>
 
 </body>
 

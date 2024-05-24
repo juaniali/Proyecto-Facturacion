@@ -108,58 +108,10 @@ label {
 }
 
 
-.formateo-boton {
-  padding: 10px 35px;
-  font-size: 16px;
-  font-weight: 600;
-  text-align: center;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  transition: background-color 0.3s ease;
-}
-
-.button {
-  background-color: #4CAF50;
-  margin-top: 10px;
-  font-size: 20px;
-  width: 98%;
-  padding: 15px 35px;
-  height: auto;
-  font-weight: 600;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.botonVerde {
-  background-color: #4CAF50;
-  color: white;
-}
-
-.botonVerde:hover {
-  background-color: #45a049;
-}
-
-.botonRojo {
-  background-color: #f44336;
-  color: white;
-}
-
-.botonRojo:hover {
-  background-color: #d32f2f;
-}
-
 .custom-file-input {
   color: transparent;
   cursor: pointer;
 }
-
-
-
 
 
 @media only screen and (max-width: 950px) {

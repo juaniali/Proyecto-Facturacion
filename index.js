@@ -18,6 +18,8 @@ document.addEventListener('DOMContentLoaded', () => {
     navBarLinks.classList.toggle("active");
   });
 
+  
+
   inicioSesion.addEventListener('submit', (e) => {
     e.preventDefault();
     let user = document.querySelector('#username');
