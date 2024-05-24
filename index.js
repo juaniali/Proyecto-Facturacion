@@ -6,6 +6,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const password = 'abc123';
   const navBarLinks = document.querySelector(".navbar-links");
 
+  const letters = document.querySelectorAll('.letter');
+  letters.forEach((letter, index) => {
+      letter.style.animationDelay = `${index * 0.1}s`;
+  });
+
   burguer.addEventListener("click", () => {
     navBarLinks.classList.toggle("active");
   });
@@ -84,11 +89,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-});
+  document.querySelector('#log-out').addEventListener('click', cerrarSesion());
+  
+  function cerrarSesion(){
+    location.href = '';
+  }
 
-document.addEventListener('DOMContentLoaded', () => {
-  const letters = document.querySelectorAll('.letter');
-  letters.forEach((letter, index) => {
-      letter.style.animationDelay = `${index * 0.1}s`;
-  });
 });
