@@ -1,23 +1,30 @@
-
-header h1 {
+header{
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin: 0;
-    font-size: 25px;
-    font-weight:600;
-    background-color: #6c3996;
+  padding: 5px;
+  background-color: #6c3996;
+} 
+h1 {
+  font-size: 25px;
+  font-weight: 600;
   color: #fff;
   text-align: center;
-  height: 40px;
-  padding-top: 10px;
+  margin: 0;
 }
 
-main {
+
+section {
   display: flex;
   justify-content:space-evenly;
-  margin-top: 100px;
+  margin: 20px;
 }
+
 .card {
-  width: 400px;
-  height: 550px;
+  margin: 0;
+  width: 30%;
+  height: 100%;
   background: #F4F6FB;
   border: 1px solid white;
   box-shadow: 10px 10px 64px 0px rgba(180, 180, 207, 0.75);
@@ -26,16 +33,18 @@ main {
 }
 
 .form {
-  padding: 25px;
+  padding: 20px;
   border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
-
-
 
 .card_header h1 {
   display: flex;
   align-items: center;
-   width: 94%;
+  justify-content: center;
+  width: 100%;
   font-size: 25px;
   color: #fff; 
   background-color: #3498db; 
@@ -49,8 +58,6 @@ main {
   background-color: #2980b9;
 }
 
-
-
 .card svg {
   margin-right: 10px;
 }
@@ -62,11 +69,16 @@ main {
 }
 
 .field {
-  padding-bottom: 10px;
+  width: 100%;
+}
+
+.form-button{
+  display: flex;
+  justify-content: space-around;
 }
 
 .input {
-  width: 93%;
+  width: 100%;
   padding: 10px;
   margin-right: 20px;
   border: 1px solid #ccc;
@@ -95,6 +107,18 @@ label {
 }
 
 
+.formateo-boton {
+  padding: 10px 35px;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  transition: background-color 0.3s ease;
+}
 
 .button {
   background-color: #4CAF50;
@@ -110,29 +134,23 @@ label {
   cursor: pointer;
 }
 
-.button:hover {
-  background-color: #45a049;
-}
-
-.button2 {
-  background-color: #f44336;
-  margin-top: 10px;
-  font-size: 20px;
-  width: 98%;
-  padding: 15px 35px;
-  height: auto;
-  font-weight: 600;
+.botonVerde {
+  background-color: #4CAF50; 
   color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
 }
 
-.button2:hover {
-  background-color: #d32f2f;
-  
+.botonVerde:hover {
+  background-color: #45a049; 
 }
 
+.botonRojo {
+  background-color: #f44336; 
+  color: white;
+}
+
+.botonRojo:hover {
+  background-color: #d32f2f; 
+}
 .custom-file-input {
   color: transparent;
   cursor: pointer;

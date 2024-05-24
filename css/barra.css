@@ -1,14 +1,17 @@
-
-header h1 {
+header{
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin: 0;
+  padding: 5px;
+  background-color: #379e7d;
+} 
+h1 {
   font-size: 25px;
   font-weight: 600;
-  background-color: #379e7d;
   color: #fff;
   text-align: center;
-  height: 40px;
-  padding-top: 10px;
-
+  margin: 0;
 }
 
 .contenedor-universal {

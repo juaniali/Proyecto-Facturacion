@@ -1,18 +1,21 @@
-header h1 {
+header{
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin: 0;
-    font-size: 25px;
-    font-weight:600;
-    background-color: #bd3a3a;
+  padding: 5px;
+  background-color: #bd3a3a;
+} 
+h1 {
+  font-size: 25px;
+  font-weight: 600;
   color: #fff;
   text-align: center;
-  height: 40px;
-  padding-top: 10px;
-}
- 
+  margin: 0;
+} 
 
 .pagina-mesas{
   display: flex;
-  
   overflow: hidden;
 }
 
@@ -21,7 +24,6 @@ header h1 {
   margin: 0;
   padding: 0;
 
-  height: 100vh;
   width: 50%;
 
   display: flex;
@@ -106,18 +108,17 @@ header h1 {
   align-items: center;
 
   width: 50%;
-  height: 100vh;
-  margin: 20px; 
-  padding: 20px;
+  /* margin: 20px; 
+  padding: 20px; */
 }
 
 form{
+  height: 100%;
   display: flex;
   flex-direction: column;
   border-radius: 5px; 
-  margin: 20px;
   background-color: #f0f0f0; 
-  padding: 30px;
+  padding: 15px;
   border: 1px solid #ccc;
 
   & input,div,table{

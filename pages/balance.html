@@ -39,19 +39,20 @@
     </div>
   </nav>
 
-  <div id="content" class="page-transition">
+  <main id="content" class="page-transition">
     <header>
       <h1>Balance general</h1>
     </header>
 
-    <main>
-      <section id="gastos">
+    <div class="contenedor-balance">
+      
+      <section class="gastos" id="gastos">
         <h2>Gastos</h2>
         <form id="formularioGasto">
           <div class="ingreso">
             <input type="number" placeholder="Ingresar monto" id="montoGasto">
             <input type="text" placeholder="Agregar comentario al gasto" id="comentarioGasto">
-            <button type="submit">Aceptar</button>
+            <button class="formateo-boton botonVerde" type="submit">Aceptar</button>
           </div>
         </form>
         <ul>
@@ -71,15 +72,18 @@
 
       <section id="balance">
         <h2>Balance</h2>
-        <p id="gastosTotales">Total de Gastos:$0.00</p>
-        <p id="totalIngresos">Total de Ingresos: $0.00</p>
-        <p id="utilidad">Utilidad: $0.00</p>
+        <div class="datos">
+          <p id="gastosTotales">Total de Gastos:$0.00</p>
+          <p id="totalIngresos">Total de Ingresos: $0.00</p>
+          <p id="utilidad">Utilidad: $0.00</p>
+        </div>
+        
       </section>
 
-    </main>
+    </div>
 
 
-  </div>
+  </main>
 
   
   <footer>
