@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
       document.querySelector('#content').classList.add('hide');
       document.querySelector('#navegacion').classList.replace('hidden', 'show');
 
-      location.href = '/pages/mesas.html';
+      location.href = '/public/pages/mesas.html';
     }
 
     if (campoVacio(user)) {
