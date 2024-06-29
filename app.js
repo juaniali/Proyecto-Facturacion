@@ -18,9 +18,9 @@ app.use( override('_method') );    //permite configurar el paquete override
 
 //app.use( '/' ,rutas);  //utiliza el paquete local de mainRoutes como objeto para utilizarlas
 
-app.get("/", (req,res) =>{
+/*app.get("/", (req,res) =>{
   res.sendFile(__dirname+'/index.html');
-})
+})*/
 
 //ESTE MIDDLEWARE VA AL FINAL!
 app.use( (req, res, next)=>{ //pagina de error 404 personalizada
