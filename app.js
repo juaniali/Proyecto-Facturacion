@@ -19,7 +19,7 @@ app.use( override('_method') );    //permite configurar el paquete override
 
 //app.use( '/' ,rutas);  //utiliza el paquete local de mainRoutes como objeto para utilizarlas
 
-app.use ( '/pages/registrarse' ,registroRoutes );
+app.use ( '/pages' ,registroRoutes );
 
 //ESTE MIDDLEWARE VA AL FINAL!
 app.use( (req, res, next)=>{ //pagina de error 404 personalizada

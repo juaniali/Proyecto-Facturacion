@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const controlador = require('./../controllers/regisroController');
 
-router.get("/pages/registrarse", controlador.getRegistros);
+router.get("/registrarse", controlador.getRegistros);
 
 router.post("/pages/registrarse", controlador.postRegistro);
 
