@@ -61,7 +61,7 @@ section {
   padding: 20px;
   border-radius: 5px;
   position: fixed;
-  top:220px;
+  top:168px;
 }
 
 .formejf {
@@ -82,6 +82,17 @@ section {
   
 }
 
+.form_inyectado{
+  background-color: white;
+  padding: 5px;
+  margin: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 180px;
+  text-align: center;
+}
+
 .productos_inyectados{
   background-color: white;
   padding: 5px;
@@ -91,16 +102,61 @@ section {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   max-width: 300px;
   text-align: center;
+  white-space: nowrap; 
+  overflow:hidden; 
+  
 }
 
 .h4_inyectados{
- 
+
   font-size: 16px;
   color: #333;
   margin: 0;
   padding: 0;
   line-height: 1.5;
   font-weight: normal;
+}
+
+.boton_inyectado_modificar{
+  background-color: #4CAF50 ;
+  padding: 10px 40px;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.boton_inyectado_modificar:hover{
+background-color:#45a049;
+}
+
+.boton_inyectado_modificar a {
+  color: #F4F6FB;
+  text-decoration: none;
+}
+
+.boton_intectados_eliminar{
+  background-color: #f44336 ;
+  padding: 10px 44px;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  transition: background-color 0.3s ease;
+  color: #F4F6FB;
+}
+
+.boton_intectados_eliminar:hover{
+  background-color: #d32f2f;
 }
 
 .card_header h1 {
