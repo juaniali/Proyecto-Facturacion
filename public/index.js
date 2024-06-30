@@ -1,24 +1,25 @@
-document.addEventListener('DOMContentLoaded', () => {
+window.onload = async() => {
+
   const burguer = document.querySelector(".Burguer");
   const inicioSesion = document.querySelector("#inicioSesion");
   const username = 'abc123';
   const password = 'abc123';
   const navBarLinks = document.querySelector(".navbar-links");
 
-  if(!navBarLinks.classList.contains('active')){
+  if (!navBarLinks.classList.contains('active')) {
     navBarLinks.classList.toggle("active");
   }
 
   const letters = document.querySelectorAll('.letter');
   letters.forEach((letter, index) => {
-      letter.style.animationDelay = `${index * 0.1}s`;
+    letter.style.animationDelay = `${index * 0.1}s`;
   });
 
   burguer.addEventListener("click", () => {
     navBarLinks.classList.toggle("active");
   });
 
-  
+
 
   inicioSesion.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -94,10 +95,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  document.querySelector('#log-out').addEventListener('click', cerrarSesion());
-  
-  function cerrarSesion(){
+  document.querySelector('#log-out')?.addEventListener('click', cerrarSesion());
+  function cerrarSesion() {
     location.href = '';
   }
 
-});
+}

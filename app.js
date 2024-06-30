@@ -3,9 +3,10 @@ const cors = require('cors');
 const override = require('method-override'); // Permite sobreescribir el method 'POST' de los forms
 
 const app = express();
-const port = process.env.PORT || 3000 || 8080;
+const port = 3000 || 8080 || process.env.PORT;
+//const path = require('path');
 
-const rutas = require('./src/routes/productRoutes');
+const registroRoutes = require('./src/routes/registroRoutes');
 
 app.set('view engine', 'ejs');
 app.set('views', (__dirname + '/src/views'));
@@ -22,13 +23,15 @@ app.use('/', rutas); // Utiliza el paquete local de mainRoutes como objeto para 
   res.sendFile(__dirname + '/index.html');
 }); */
 
-// ESTE MIDDLEWARE VA AL FINAL!
-/*app.use((req, res, next) => { // Página de error 404 personalizada
+app.use ( '/pages' ,registroRoutes );
+
+//ESTE MIDDLEWARE VA AL FINAL!
+app.use( (req, res, next)=>{ //pagina de error 404 personalizada
   res.status(404).send(`
     <h1 style="color:red">Error 404</h1>
     <a href="/"> <-- Volver</a>
   `);
-});*/
+});
 
 // Escuchar servidor
 app.listen(port, () => {
