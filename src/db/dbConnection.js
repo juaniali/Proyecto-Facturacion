@@ -1,6 +1,6 @@
 const mysql = require('mysql2');
 
-const conn = mysql.createPool({
+const pool = mysql.createPool({
   host :'mysql-lambrechtdatabase.alwaysdata.net',
   user :'366567_admin',
   password:'366567Admin',
@@ -12,5 +12,5 @@ const conn = mysql.createPool({
 });
 
 module.exports = {
-  conn : conn.promise()
+  conn : pool.promise()
 }
