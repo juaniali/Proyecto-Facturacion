@@ -44,7 +44,6 @@ module.exports = {
     const sql = `UPDATE productos SET nombre = ?, precio = ?, imagen = ?, descripcion = ? WHERE id_producto=? `
     const {idActualizar, nombre, precio, imagen, descripcion} = req.body
     const modificar = await conn.query(sql,[nombre, precio, imagen, descripcion,idActualizar ])
-    console.log(modificar)
     res.redirect("/pages/carga-datos.html")
   },
 
