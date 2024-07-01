@@ -6,6 +6,7 @@ const app = express();
 const port = process.env.PORT || 3000 || 8080;
 
 const rutas = require('./src/routes/productRoutes');
+const rutasLogin = require('./src/routes/loginRoutes')
 
 app.set('view engine', 'ejs');
 app.set('views', (__dirname + '/src/views'));
@@ -16,7 +17,9 @@ app.use(express.static(__dirname + '/public')); // Permite usar los archivos den
 app.use(express.urlencoded({ extended: true })); // Permite convertir informacion urlencoded de los formularios a un objeto de Js
 app.use(override('_method')); // Permite configurar el paquete override
 
+app.use('/login', login);
 app.use('/', rutas); // Utiliza el paquete local de mainRoutes como objeto para utilizarlas
+
 
 /* app.get("/", (req, res) => {
   res.sendFile(__dirname + '/index.html');
