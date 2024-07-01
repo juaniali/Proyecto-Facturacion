@@ -1,4 +1,4 @@
-window.onload = async() => {
+document.addEventListener('DOMContentLoaded', () => {
 
   const burguer = document.querySelector(".Burguer");
   const inicioSesion = document.querySelector("#inicioSesion");
@@ -25,12 +25,11 @@ window.onload = async() => {
     e.preventDefault();
     let user = document.querySelector('#username');
     let pass = document.querySelector('#password');
-
     if (userValido(user) && passValido(pass)) {
       document.querySelector('#content').classList.add('hide');
       document.querySelector('#navegacion').classList.replace('hidden', 'show');
 
-      location.href = '/pages/mesas.html';
+      location.assign('/pages/mesas.html');
     }
 
     if (campoVacio(user)) {
@@ -95,9 +94,9 @@ window.onload = async() => {
     });
   });
 
-  document.querySelector('#log-out')?.addEventListener('click', cerrarSesion());
+  document.querySelector('#log-out').addEventListener('click', cerrarSesion());
   function cerrarSesion() {
     location.href = '';
   }
 
-}
+});
