@@ -4,6 +4,7 @@ const override = require('method-override'); // Permite sobreescribir el method 
 
 const app = express();
 const port = process.env.PORT || 3000 || 8080;
+const auth = require('./src/config/auth');//------------incorporar en las rutas app.use('/pages',auth, mainRoutes);
 
 const rutas = require('./src/routes/productRoutes');
 const rutasLogin = require('./src/routes/loginRoutes')
