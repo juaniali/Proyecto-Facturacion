@@ -29,7 +29,7 @@ module.exports = {
     }else{
       const token = jwt.sign( 
         {id:valido.id}, 
-        jwtconfig.secrectKey, 
+        jwtconfig.secretKey, 
         {expiresIn: jwtconfig.tokenExpiresIn} 
       );
       res.status(201).send( {auth:true, token} );

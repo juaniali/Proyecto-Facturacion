@@ -17,7 +17,7 @@ app.use(express.static(__dirname + '/public')); // Permite usar los archivos den
 app.use(express.urlencoded({ extended: true })); // Permite convertir informacion urlencoded de los formularios a un objeto de Js
 app.use(override('_method')); // Permite configurar el paquete override
 
-app.use('/login', login);
+app.use('/login', rutasLogin);
 app.use('/', rutas); // Utiliza el paquete local de mainRoutes como objeto para utilizarlas
 
 
