@@ -24,7 +24,8 @@ const port = process.env.PORT || 3000 || 8080;
 
 
 const rutas = require('./src/routes/productRoutes');
-const rutasLogin = require('./src/routes/loginRoutes')
+const rutasLogin = require('./src/routes/loginRoutes');
+const rutasFactura = require('./src/routes/facturaRoutes');
 
 app.set('view engine', 'ejs');
 app.set('views', (__dirname + '/src/views'));
@@ -37,6 +38,7 @@ app.use(express.json());//es necesario para el fetch del login
 app.use(override('_method')); // Permite configurar el paquete override
 
 app.use('/login', rutasLogin);
+app.use('/factura', rutasFactura);
 app.use('/', rutas); // Utiliza el paquete local de mainRoutes como objeto para utilizarlas
 
 

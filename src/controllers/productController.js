@@ -4,7 +4,7 @@ module.exports = {
   getListado: async (req, res) => {
     try {
       const userId = req.user.id;
-      const [registros] = await conn.query('SELECT * FROM usuarios WHERE ');
+      const [registros] = await conn.query('SELECT * FROM usuarios');
       res.json(registros);
     } catch (error) {
       console.error('Error al obtener el listado:', error);
@@ -38,7 +38,7 @@ module.exports = {
    res.render("modificar", {
     title:"modifico lo que quiero",
     registro: modificar[0]
-})
+    });
   },
 
   actualizar: async (req, res) => {
@@ -47,12 +47,12 @@ module.exports = {
     const modificar = await conn.query(sql,[nombre, precio, imagen, descripcion,idActualizar ])
     res.redirect("/pages/carga-datos.html")
   },
-
  
   delete: async (req, res) => {
     const eliminado = await conn.query(`DELETE FROM productos WHERE id_producto=?`, req.body.idEliminar)
     res.redirect("/pages/carga-datos.html")
    },
+
   index: (req, res) => {
     res.sendFile(__dirname + '/index.html');
   }
