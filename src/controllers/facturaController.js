@@ -20,20 +20,29 @@ module.exports = {
     },
 
 
-  crearFactura: async(req ,res)=>{
-    const {  } = req.body;
-
-    try {
-      await conn.query(
-        'INSERT INTO facturas() VALUES ()',
-        []
-      );
-
-    } catch (error) {
-      console.error('Error al crear registro:', error);
-      res.status(500).json({ error: 'Error al crear registro' });
-    }
-  },
+    crearFactura: async (req, res) => {
+        const { id_usuario, fecha, fpago, total } = req.body;
+        const [detalles] = 
+    
+        // Validar que los campos no estén vacíos
+        if (!id_usuario || !fecha || !fpago) {
+          return res.status(400).json({ error: 'Todos los campos son obligatorios' });
+        }
+    
+        try {
+          await conn.query(
+            'INSERT INTO Facturas (id_usuario, fecha, fpago, total) VALUES (?, ?, ?, ?)',
+            [parseInt(nombre), fecha, fpago, parseFloat(precio)],
+            
+            res.redirect("/pages/carga-datos.html")
+          );
+          
+        } catch (error) {
+          console.error('Error al crear factura:', error);
+          res.status(500).json({ error: 'Error al crear factura' });
+        }
+      },   
+      
  mostrarFacturas: async (req, res) => {
     const [facturas] = this.getFacturas();
 
