@@ -21,17 +21,17 @@ module.exports = {
 
 
     crearFactura: async (req, res) => {
-        const { id_usuario, fecha, fpago, total } = req.body;
-        const [detalles] = 
+        const { id_factura, id_usuario, fecha, fpago, total } = req.body;
+        const [detalles] = this.getDetallesByIdFactura(id_factura)
     
         // Validar que los campos no estén vacíos
-        if (!id_usuario || !fecha || !fpago) {
+        if (!id_factura || !id_usuario || !fecha || !fpago) {
           return res.status(400).json({ error: 'Todos los campos son obligatorios' });
         }
     
         try {
           await conn.query(
-            'INSERT INTO Facturas (id_usuario, fecha, fpago, total) VALUES (?, ?, ?, ?)',
+            'INSERT INTO Facturas (id_factura, id_usuario, fecha, fpago, total) VALUES (?, ?, ?, ?, ?)',
             [parseInt(nombre), fecha, fpago, parseFloat(precio)],
             
             res.redirect("/pages/carga-datos.html")
@@ -42,7 +42,7 @@ module.exports = {
           res.status(500).json({ error: 'Error al crear factura' });
         }
       },   
-      
+
  mostrarFacturas: async (req, res) => {
     const [facturas] = this.getFacturas();
 
