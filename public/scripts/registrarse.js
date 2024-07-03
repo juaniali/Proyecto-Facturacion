@@ -1,4 +1,4 @@
-document.querySelector('body').onload = async () => {
+document.addEventListener('DOMContentLoaded', async () => {
 
   const registrarse = document.querySelector("#registrarse");
 
@@ -66,6 +66,5 @@ document.querySelector('body').onload = async () => {
   //   return true;
   // }
 
-
-}
+});
 
