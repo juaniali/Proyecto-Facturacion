@@ -18,6 +18,7 @@ module.exports = (req,res,next)=> {
     if(err) {
       return res.status(500).send({auth:false, message:'Token no autorizado'});
     }
+    req.user = decoded;
     next();
-  })
+  });
 }

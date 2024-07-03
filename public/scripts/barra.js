@@ -7,6 +7,19 @@ window.onload = async() => {
   //consumirDb();
   const contenedorProductos = document.querySelector("#listado-productos");
   
+  let productosBusqueda = [];
+  const res = await fetch('http://localhost:3000/pages/carga-datos', {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}` // Envía el token en el encabezado de autorización
+    }
+  });
+  const datos = await res.json();
+  productosBusqueda = data.productos;
+  mostrarProductos(productosBusqueda); // Mostrar productos al cargar la página
+   
+  
   //Tarjetas de productos -----------------------------------------------
   productos.forEach(tarjeta => {
     tarjeta.addEventListener('click', () => {
@@ -86,59 +99,45 @@ window.onload = async() => {
   
   
   //Busqueda de productos---------------------------------------------------
-  // let productosBusqueda = [];
-  // async function consumirDb() {
-  //   try {
-  //     const db = await fetch('./../db/productos.json');
-  //     const data = await db.json();
-  //     productosBusqueda = data.productos;
-  //     mostrarProductos(productosBusqueda); // Mostrar productos al cargar la página
-  //   } catch (error) {
-  //     console.error(error);
-  //   }
-  // }
   
-  // buscar.addEventListener("keyup", () => {
-  //   const valorBuscado = buscar.value.toLowerCase();
-  //   const resultados = productosBusqueda.filter(producto => producto.nombre.toLowerCase().includes(valorBuscado));
-  //   limpiarProductos();
-  //   mostrarProductos(resultados);
-  // });
   
-  // function mostrarProductos(productos) {
-  //   productos.forEach(producto => {
-  //     let li = document.createElement("li");
-  //     li.className = "tarjeta";
-  //     li.setAttribute('data-nombre', producto.nombre);
-  //     li.setAttribute('data-precio', producto.precio);
-  
-  //     let nombre = document.createElement("p");
-  //     nombre.textContent = producto.nombre;
-  //     nombre.className = "nombre-producto";
-  //     li.appendChild(nombre);
-  
-  //     let precio = document.createElement("p");
-  //     precio.textContent = `$${producto.precio.toFixed(2)}`;
-  //     precio.className = "precio-producto";
-  //     li.appendChild(precio);
-  
-  //     let imagen = document.createElement("img");
-  //     imagen.src = producto.img;
-  //     imagen.className = "imagen-tarjeta";
-  //     li.appendChild(imagen);
-  
-  //     li.addEventListener('click', () => {
-  //       agregarProductoAFactura(producto.nombre, parseFloat(producto.precio));
-  //     });
-  
-  //     fragmento.appendChild(li);
-  //   });
-  //   contenedorProductos.appendChild(fragmento);
-  // }
-  
-  // function limpiarProductos() {
-  //   while (contenedorProductos.firstChild) {
-  //     contenedorProductos.removeChild(contenedorProductos.firstChild);
-  //   }
-  // }
+
+  buscar.addEventListener("keyup", () => {
+    const valorBuscado = buscar.value.toLowerCase();
+    const resultados = productosBusqueda.filter(producto => producto.nombre.toLowerCase().includes(valorBuscado));
+    limpiarProductos();
+    mostrarProductos(resultados);
+  });
+
+  function mostrarProductos(productos) {
+    productos.forEach(producto => {
+      let li = document.createElement("li");
+      li.className = "tarjeta";
+      li.setAttribute('data-nombre', producto.nombre);
+      li.setAttribute('data-precio', producto.precio);
+      let nombre = document.createElement("p");
+      nombre.textContent = producto.nombre;
+      nombre.className = "nombre-producto";
+      li.appendChild(nombre);
+      let precio = document.createElement("p");
+      precio.textContent = `$${producto.precio.toFixed(2)}`;
+      precio.className = "precio-producto";
+      li.appendChild(precio);
+      let imagen = document.createElement("img");
+      imagen.src = producto.img;
+      imagen.className = "imagen-tarjeta";
+      li.appendChild(imagen);
+      li.addEventListener('click', () => {
+        agregarProductoAFactura(producto.nombre, parseFloat(producto.precio));
+      });
+      fragmento.appendChild(li);
+    });
+    contenedorProductos.appendChild(fragmento);
+  }
+
+  function limpiarProductos() {
+    while (contenedorProductos.firstChild) {
+      contenedorProductos.removeChild(contenedorProductos.firstChild);
+    }
+  }
 }
