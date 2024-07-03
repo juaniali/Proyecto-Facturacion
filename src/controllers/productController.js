@@ -3,7 +3,8 @@ const { conn } = require('../db/dbConnection');
 module.exports = {
   getListado: async (req, res) => {
     try {
-      const [registros] = await conn.query('SELECT * FROM productos ');
+      const userId = req.user.id;
+      const [registros] = await conn.query('SELECT * FROM usuarios WHERE ');
       res.json(registros);
     } catch (error) {
       console.error('Error al obtener el listado:', error);
