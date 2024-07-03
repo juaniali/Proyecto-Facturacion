@@ -4,7 +4,8 @@ module.exports = {
   getListado: async (req, res) => {
     try {
       const userId = req.user.id;
-      const [registros] = await conn.query('SELECT * FROM usuarios');
+      console.log(userId);
+      const [registros] = await conn.query(`SELECT * FROM productos WHERE id_usuario = ${userId}`);
       res.json(registros);
     } catch (error) {
       console.error('Error al obtener el listado:', error);
@@ -14,6 +15,7 @@ module.exports = {
 
   crearRegistro: async (req, res) => {
     const { nombre, precio,imagen, descripcion } = req.body;
+    
 
     // Validar que los campos no estén vacíos
     if (!nombre || !precio || !imagen || !descripcion) {
@@ -21,8 +23,9 @@ module.exports = {
     }
 
     try {
+      const userId = req.user.id;
       await conn.query(
-        'INSERT INTO productos (nombre, precio, imagen, descripcion) VALUES (?, ?, ?, ?)',
+        `INSERT INTO productos (nombre, precio, imagen, descripcion, id_usuario) VALUES (?, ?, ?, ?,${userId})`,
         [nombre, parseFloat(precio), imagen,descripcion],
         res.redirect("/pages/carga-datos.html")
       );

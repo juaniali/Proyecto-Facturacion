@@ -1,7 +1,6 @@
 
 const { conn } = require('../db/dbConnection');
 const jwt = require('jsonwebtoken');
-//const crypt = require('bcryptjs');
 const crypt = require('bcrypt');
 const jwtconfig = require('./../config/jwtconfig');
 
@@ -9,14 +8,13 @@ module.exports = {
 
   crearRegistro: async(req,res)=>{
     const {email, password} = req.body;
-    //const salt = crypt.genSaltSync(8);
     try{
       const passToString = password.toString();
       const emailToString = email.toString();
       const encriptado = crypt.hashSync(passToString, 8);
   
       const [creado] = await conn.query(
-        `INSERT INTO usuarios (email,password) VALUES (?,?)`, 
+        `INSERT INTO usuarios (correo,clave) VALUES (?,?)`, 
         [emailToString,encriptado]
       );
 
@@ -31,7 +29,7 @@ module.exports = {
     const {email, password} = req.body;
     const  passToString = password.toString();
     try{
-      const [[valido]] = await conn.query(`SELECT * FROM usuarios WHERE email = ?`, email);
+      const [[valido]] = await conn.query(`SELECT * FROM usuarios WHERE correo = ?`, email);
     
       if(valido === undefined){
         res.status(404).send('Usuario no encontrado');
