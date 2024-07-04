@@ -10,7 +10,6 @@ module.exports = (req, res, next) => {
   }
 
   const token = authHeader.split(' ')[1];
-  console.log('Token:', token);
 
   if (!token) {
     console.log('No token found');
