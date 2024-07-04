@@ -57,8 +57,10 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   function guardarVentaParcial(monto) {
+
     // Generar una clave única para la venta parcial (puedes usar un timestamp)
     const claveVenta = 'ventaParcialBarra_' + Date.now();
+    
     // Guardar el monto de la venta parcial en el almacenamiento local
     localStorage.setItem(claveVenta, monto.toString());
   }

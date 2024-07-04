@@ -3,7 +3,7 @@ document.querySelector("body").onload = async () => {
   const buscar = document.querySelector("#buscar-producto");
   const contenedorProductos = document.querySelector("#listado-productos");
   const fragmento = document.createDocumentFragment();
-  
+
   obtenerProductos();
   let productosBusqueda = [];
 
@@ -20,7 +20,6 @@ document.querySelector("body").onload = async () => {
     mostrarProductos(productosBusqueda);
   }
    
-  
   //Tarjetas de productos -----------------------------------------------
   productos.forEach(tarjeta => {
     tarjeta.addEventListener('click', () => {
@@ -31,6 +30,16 @@ document.querySelector("body").onload = async () => {
     });
   });
   
+  async function agregarDetalleAFactura(nombre,){
+    const resp = await fetch('/factura/detalle',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({email, password})
+    });//Envia user y pass a comprobar
+
+  
+  }
+
   function agregarProductoAFactura(nombre, precio) {
     const fila = document.createElement('tr');
     fila.innerHTML = `
@@ -110,32 +119,6 @@ document.querySelector("body").onload = async () => {
     mostrarProductos(resultados);
   });
 
-  /*function mostrarProductos(datos){
-    let listaHtml = document.querySelector("#listado");
-    listaHtml.innerHTML = "";
-    datos.forEach(registro => {
-      listaHtml.innerHTML += `
-      <form class="form_inyectado" method="post" action="/pages/carga-datos?_method=delete" style="display:" >
-        <div class="productos_inyectados">
-          <h4 class="h4_inyectados">${registro.nombre}</h4>
-        </div>
-              
-        <div class="productos_inyectados">
-          <h4 class="h4_inyectados">${registro.precio}</h4>
-        </div>
-
-        <div class="productos_inyectados">
-          <h4 class="h4_inyectados">${registro.imagen}</h4> 
-        </div>
-
-        <div class="productos_inyectados">
-          <h4 class="h4_inyectados">${registro.descripcion}</h4>  
-        </div>
-        
-      </form>`;
-
-    });
-  }*/
 
   function mostrarProductos(productos) {
 

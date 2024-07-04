@@ -16,7 +16,6 @@ document.querySelector("body").onload = async () => {
 
     try {
       const token = localStorage.getItem('userId');
-      console.log(token);
       const res = await fetch('http://localhost:3000/pages/carga-datos', {
         method: 'POST',
         headers: {

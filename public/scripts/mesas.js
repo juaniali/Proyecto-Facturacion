@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const abrirMesaForm = document.getElementById('abrir-mesa-form');
   const cerrarMesaForm = document.getElementById('cerrar-mesa-form');
-  
+  const cerrarMesaB = document.querySelector('#cerrar-mesa-b');
   const mesas = document.querySelectorAll('.mesa');
   const numeroMesa = document.querySelector('#numero-mesa');
 
@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let productos = [];
 
   consumirDb();
+  obtenerProductos();
 
   const buscar = document.querySelector("#buscar-producto");
   const contenedorProductos = document.querySelector("#listado-productos");
@@ -74,13 +75,11 @@ document.addEventListener('DOMContentLoaded', () => {
     ventaMesa.style.display = 'flex';
   });
 
-  cerrarMesaForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-
+  document.getElementById('cerrarMesa')?.addEventListener('click', () => {
     const totalVenta = parseFloat(document.getElementById('total').innerText.replace('$', ''));
+    mostrarMensaje('Venta cerrada', `Total de la venta: $${totalVenta.toFixed(2)}`);
     reiniciarFactura();
     capturarVenta(totalVenta); // Llamada a la función para almacenar el total de la venta
-    // Reiniciar datos de la mesa
     mesasData[currentMesaId] = null;
     
     abrirMesa.style.display = 'flex';
@@ -88,6 +87,16 @@ document.addEventListener('DOMContentLoaded', () => {
   
     abrirMesaForm.reset();
   });
+
+  // cerrarMesaForm.addEventListener('submit', (e) => {
+  //   e.preventDefault();
+
+  //   const totalVenta = parseFloat(document.getElementById('total').innerText.replace('$', ''));
+  //   reiniciarFactura();
+  //   capturarVenta(totalVenta); // Llamada a la función para almacenar el total de la venta
+  //   // Reiniciar datos de la mesa
+    
+  // });
 
   // Buscar Producto ------------------------------------------
   async function consumirDb() {
@@ -101,6 +110,21 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  async function obtenerProductos(){
+    const token = localStorage.getItem('userId');
+    const res = await fetch('http://localhost:3000/pages/carga-datos',{
+      method:'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}` // Envía el token en el encabezado de autorización
+      }
+    });
+    productos = await res.json();
+    mostrarProductos(productos);
+  }
+
+
+
   buscar.addEventListener("keyup", () => {
     const valorBuscado = buscar.value.toLowerCase();
     const resultados = productos.filter(producto => producto.nombre.toLowerCase().includes(valorBuscado));
@@ -109,7 +133,9 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   function mostrarProductos(productos) {
+
     productos.forEach(producto => {
+
       let li = document.createElement("li");
       li.className = "tarjeta";
       li.setAttribute('data-nombre', producto.nombre);
@@ -121,19 +147,19 @@ document.addEventListener('DOMContentLoaded', () => {
       li.appendChild(nombre);
 
       let precio = document.createElement("p");
-      precio.textContent = `$${producto.precio.toFixed(2)}`;
+      const precioNumero = parseFloat(producto.precio);
+      precio.textContent = `$${precioNumero.toFixed(2)}`;
       precio.className = "precio-producto";
       li.appendChild(precio);
 
       let imagen = document.createElement("img");
-      imagen.src = producto.img;
+      imagen.src = producto.imagen;
       imagen.className = "imagen-tarjeta";
       li.appendChild(imagen);
 
       li.addEventListener('click', () => {
         agregarProductoAFactura(producto.nombre, parseFloat(producto.precio));
       });
-
       fragmento.appendChild(li);
     });
     contenedorProductos.appendChild(fragmento);
@@ -201,6 +227,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function ocultarMensaje() {
     document.getElementById('cuadro').style.display = 'none';
   }
+
 
   // Función para capturar y almacenar el total de la venta en la página de barra
   function capturarVenta(totalVenta) {

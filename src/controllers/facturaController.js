@@ -2,13 +2,11 @@ const conn = require('../db/dbConnection');
 
 module.exports = {
 
-
-
   // get factura y get detalle <-----------------------------------------------------|
   getFacturas: async (req, res) =>{
     try {
       const userId = req.user.id;
-      const [registros] = await conn.query('SELECT * FROM facturas');
+      const [registros] = await conn.query('SELECT * FROM facturas WHERE id_usuario=?',userId);
       res.json(registros);
 
     } catch (error) {
@@ -35,20 +33,19 @@ module.exports = {
   // Crear factura y Crear Detalle <----------------------------------------------------|
 
   crearFactura: async (req,res) => {
-    const { id_usuario, fecha, fpago, total=0 } = req.body;
-    const [detalles] = {}  
+    const userId = req.user.id;
+    const { fecha, fpago, total=0 } = req.body;
   
       // Validar que los campos no estén vacíos
-      if (!id_usuario || !fecha || !total) {
+      if (!userId || !fecha || !total) {
         return res.status(400).json({ error: 'Todos los campos son obligatorios' });
       }
   
       try {
         //const userId = req.user.id;
         await conn.query(
-          `INSERT INTO facturas (id_usuario, fecha, fpago, total) VALUES (?, ?, ?, ?, ${userId})`,
-          [id_factura, id_producto, cantidad, parseFloat(total)],
-          res.redirect("/pages/carga-datos.html")
+          `INSERT INTO facturas (id_usuario, fecha, fpago, total) VALUES (?, ?, ?, ?,)`,
+          [userId,fecha,fpago,parseFloat(total)],
         );
         
       } catch (error) {
@@ -67,9 +64,8 @@ module.exports = {
       try {
         //const userId = req.user.id;
         await conn.query(
-          `INSERT INTO detalles (id_factura, id_productos, cantidad, precio) VALUES (?, ?, ?, ?,${userId})`,
-          [id_factura, id_producto, cantidad, parseFloat(precio)],
-          res.redirect("/pages/")
+          `INSERT INTO detalles (id_factura, id_productos, cantidad, precio) VALUES (?, ?, ?, ?)`,
+          [id_factura, id_producto, cantidad, parseFloat(precio)]
         );
         
       } catch (error) {
