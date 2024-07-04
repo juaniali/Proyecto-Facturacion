@@ -1,23 +1,24 @@
-window.onload = async() => {
+document.querySelector("body").onload = async () => {
   const productos = document.querySelectorAll('.tarjeta');
-
   const buscar = document.querySelector("#buscar-producto");
+  const contenedorProductos = document.querySelector("#listado-productos");
   const fragmento = document.createDocumentFragment();
   
-  //consumirDb();
-  const contenedorProductos = document.querySelector("#listado-productos");
-  
+  obtenerProductos();
   let productosBusqueda = [];
-  const res = await fetch('http://localhost:3000/pages/carga-datos', {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json',
-      'Authorization': `Bearer ${token}` // Envía el token en el encabezado de autorización
-    }
-  });
-  const datos = await res.json();
-  productosBusqueda = data.productos;
-  mostrarProductos(productosBusqueda); // Mostrar productos al cargar la página
+
+  async function obtenerProductos(){
+    const token = localStorage.getItem('userId');
+    const res = await fetch('http://localhost:3000/pages/carga-datos',{
+      method:'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}` // Envía el token en el encabezado de autorización
+      }
+    });
+    productosBusqueda = await res.json();
+    mostrarProductos(productosBusqueda);
+  }
    
   
   //Tarjetas de productos -----------------------------------------------
@@ -109,24 +110,58 @@ window.onload = async() => {
     mostrarProductos(resultados);
   });
 
+  /*function mostrarProductos(datos){
+    let listaHtml = document.querySelector("#listado");
+    listaHtml.innerHTML = "";
+    datos.forEach(registro => {
+      listaHtml.innerHTML += `
+      <form class="form_inyectado" method="post" action="/pages/carga-datos?_method=delete" style="display:" >
+        <div class="productos_inyectados">
+          <h4 class="h4_inyectados">${registro.nombre}</h4>
+        </div>
+              
+        <div class="productos_inyectados">
+          <h4 class="h4_inyectados">${registro.precio}</h4>
+        </div>
+
+        <div class="productos_inyectados">
+          <h4 class="h4_inyectados">${registro.imagen}</h4> 
+        </div>
+
+        <div class="productos_inyectados">
+          <h4 class="h4_inyectados">${registro.descripcion}</h4>  
+        </div>
+        
+      </form>`;
+
+    });
+  }*/
+
   function mostrarProductos(productos) {
+
     productos.forEach(producto => {
+
       let li = document.createElement("li");
       li.className = "tarjeta";
       li.setAttribute('data-nombre', producto.nombre);
       li.setAttribute('data-precio', producto.precio);
+
       let nombre = document.createElement("p");
       nombre.textContent = producto.nombre;
       nombre.className = "nombre-producto";
       li.appendChild(nombre);
+
       let precio = document.createElement("p");
-      precio.textContent = `$${producto.precio.toFixed(2)}`;
+      const precioNumero = parseFloat(producto.precio);
+      precio.textContent = `$${precioNumero.toFixed(2)}`;
       precio.className = "precio-producto";
       li.appendChild(precio);
+
       let imagen = document.createElement("img");
-      imagen.src = producto.img;
+      imagen.src = producto.imagen;
       imagen.className = "imagen-tarjeta";
       li.appendChild(imagen);
+
       li.addEventListener('click', () => {
         agregarProductoAFactura(producto.nombre, parseFloat(producto.precio));
       });
