@@ -3,8 +3,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const loguearse= document.querySelector('#loguearse');
   
   loguearse.addEventListener('click',async()=>{
+    
     let email = document.querySelector(`[name='email']`).value;
     let password = document.querySelector(`[name='password']`).value;
+    
     const resp = await fetch('/login/login',{
       method:'POST',
       headers:{'Content-Type':'application/json'},
