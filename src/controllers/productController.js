@@ -3,9 +3,8 @@ const { conn } = require('../db/dbConnection');
 module.exports = {
   getListado: async (req, res) => {
     try {
-      const userId = req.user.id;
-      console.log(userId);
-      const [registros] = await conn.query(`SELECT * FROM productos WHERE id_usuario = ${userId}`);
+      const userId = req.userId;
+      const [registros] = await conn.query(`SELECT * FROM productos WHERE id_usuario=?`, userId);
       res.json(registros);
     } catch (error) {
       console.error('Error al obtener el listado:', error);
@@ -15,18 +14,18 @@ module.exports = {
 
   crearRegistro: async (req, res) => {
     const { nombre, precio,imagen, descripcion } = req.body;
+    console.log('req',req);
+    const userId = req.userId;
     
-
     // Validar que los campos no estén vacíos
     if (!nombre || !precio || !imagen || !descripcion) {
       return res.status(400).json({ error: 'Todos los campos son obligatorios' });
     }
 
     try {
-      //const userId = req.user.id;
       await conn.query(
-        `INSERT INTO productos (nombre, precio, imagen, descripcion, id_usuario) VALUES (?, ?, ?, ?,${userId})`,
-        [nombre, parseFloat(precio), imagen,descripcion],
+        `INSERT INTO productos (nombre, precio, imagen, descripcion, id_usuario) VALUES (?, ?, ?, ?,?)`,
+        [nombre, parseFloat(precio), imagen,descripcion,userId],
         res.redirect("/pages/carga-datos.html")
       );
       
