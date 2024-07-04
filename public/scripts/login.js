@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   
     const data = await resp.json()//si no hay error recibe el token
-    localStorage.setItem("jwt-token",data.token);
+    localStorage.setItem("userId",data.token);
   
     document.querySelector('#content').classList.add('hide');
     document.querySelector('#navegacion').classList.replace('hidden', 'show');

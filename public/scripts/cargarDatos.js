@@ -1,18 +1,25 @@
 document.querySelector("body").onload = async () => {
-  try {
-    const res = await fetch('http://localhost:3000/pages/carga-datos', {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}` // Envía el token en el encabezado de autorización
-      }
-    });
-    const datos = await res.json();
-    let listaHtml = document.querySelector("#listado");
-    listaHtml.innerHTML = "";
+  const form = document.querySelector('#carga-datos');
 
-    datos.forEach(registro => {
-      listaHtml.innerHTML += `
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    try {
+      const token = localStorage.getItem('userId');
+      console.log(token);
+      const res = await fetch('http://localhost:3000/pages/carga-datos', {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}` // Envía el token en el encabezado de autorización
+        }
+      });
+      const datos = await res.json();
+      let listaHtml = document.querySelector("#listado");
+      listaHtml.innerHTML = "";
+
+      datos.forEach(registro => {
+        listaHtml.innerHTML += `
         <form class="form_inyectado" method="post" action="/pages/carga-datos?_method=delete" style="display:" >
           <div class="productos_inyectados">
             <h4 class="h4_inyectados">${registro.nombre}</h4>
@@ -35,8 +42,9 @@ document.querySelector("body").onload = async () => {
           <input class="boton_intectados_eliminar" type="submit" value="Eliminar">
         </form>`;
 
-    });
-  } catch (error) {
-    console.error('Error al cargar datos:', error);
-  }
-};
+      });
+    } catch (error) {
+      console.error('Error al cargar datos:', error);
+    }
+  });
+}

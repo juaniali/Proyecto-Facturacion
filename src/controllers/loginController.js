@@ -42,11 +42,13 @@ module.exports = {
         return res.status(401).send({ auth: false, token: null });
       }
 
+      const userId = valido.id_usuario
       const token = jwt.sign(
-        { id: valido.id },
+        { userId: userId },
         jwtconfig.secretKey,
         { expiresIn: jwtconfig.tokenExpiresIn }
       );
+      console.log('Token generado:',token);
       res.status(201).send({ auth: true, token });
 
     } catch (error) {
