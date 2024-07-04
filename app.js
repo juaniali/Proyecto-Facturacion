@@ -4,24 +4,6 @@ const override = require('method-override'); // Permite sobreescribir el method 
 
 const app = express();
 const port = process.env.PORT || 3000 || 8080;
-//const auth = require('./src/config/auth');//------------incorporar en las rutas app.use('/pages',auth, mainRoutes);
-
-  /*ESTO VA EN DONDE SE APLIQUE LA AUTENTICACIION
-    const token = localStorage.getItem('jwt-token');
-    const res = fetch('',{
-      method:'GET',
-      headers:{
-        "Content-Type":"application/json",
-        "Authorization":`Bearer ${token}`
-      }
-    });
-    if(!res.ok){
-      window.location.href="";
-      throw Error("Problemas en login");
-    }
-  */
-
-
 
 const rutas = require('./src/routes/productRoutes');
 const rutasLogin = require('./src/routes/loginRoutes');
@@ -41,18 +23,12 @@ app.use('/login', rutasLogin);
 app.use('/factura', rutasFactura);
 app.use('/', rutas); // Utiliza el paquete local de mainRoutes como objeto para utilizarlas
 
-
-/* app.get("/", (req, res) => {
-  res.sendFile(__dirname + '/index.html');
-}); */
-
-// ESTE MIDDLEWARE VA AL FINAL!
-/*app.use((req, res, next) => { // Página de error 404 personalizada
+app.use((req, res, next) => { // Página de error 404 personalizada
   res.status(404).send(`
     <h1 style="color:red">Error 404</h1>
     <a href="/"> <-- Volver</a>
   `);
-});*/
+});
 
 // Escuchar servidor
 app.listen(port, () => {

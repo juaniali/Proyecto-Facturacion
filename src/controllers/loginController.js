@@ -48,7 +48,6 @@ module.exports = {
         jwtconfig.secretKey,
         { expiresIn: jwtconfig.tokenExpiresIn }
       );
-      console.log('Token generado:',token);
       res.status(201).send({ auth: true, token });
 
     } catch (error) {

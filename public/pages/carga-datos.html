@@ -46,17 +46,20 @@
     </header>
 
     <section>
-      <form class="form card" action="/pages/carga-datos" method="POST" enctype="application/x-www-form-urlencoded" id="carga-datos">
+      <form class="form card" action="/pages/carga-datos" method="POST" enctype="application/x-www-form-urlencoded"
+        id="carga-datos">
         <div class="card_header">
-          <h1 class="form_heading"><svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24">
-              <path fill="white" d="M11 18q-2.925 0-4.962-2.037T4 11V5q0-.825.588-1.412T6 3h12.5q1.45 0 2.475 1.025T22 6.5t-1.025 2.475T18.5 10H18v1q0 2.925-2.037 4.963T11 18M6 8h10V5H6zm5 8q2.075 0 3.538-1.463T16 11v-1H6v1q0 2.075 1.463 3.538T11 16m7-8h.5q.625 0 1.063-.437T20 6.5t-.437-1.062T18.5 5H18zM4 21v-2h16v2zm7-11" />
+          <h1 class="form_heading"><svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em"
+              viewBox="0 0 24 24">
+              <path fill="white"
+                d="M11 18q-2.925 0-4.962-2.037T4 11V5q0-.825.588-1.412T6 3h12.5q1.45 0 2.475 1.025T22 6.5t-1.025 2.475T18.5 10H18v1q0 2.925-2.037 4.963T11 18M6 8h10V5H6zm5 8q2.075 0 3.538-1.463T16 11v-1H6v1q0 2.075 1.463 3.538T11 16m7-8h.5q.625 0 1.063-.437T20 6.5t-.437-1.062T18.5 5H18zM4 21v-2h16v2zm7-11" />
             </svg>Ingresar Producto</h1>
         </div>
         <div class="field">
           <label for="nombre">Nombre del Producto</label>
           <input class="input" name="nombre" type="text" placeholder="Producto" id="nombre">
         </div>
-      
+
         <div class="field">
           <label for="precio">Precio</label>
           <input class="input" name="precio" type="number" placeholder="Precio Producto" id="precio">
@@ -65,7 +68,7 @@
           <label for="imagen">Cargar Imagen</label>
           <input class="input" name="imagen" type="text" placeholder="imagen">
         </div>
-      
+
         <div class="descripcion">
           <label for="descripcion">Descripcion</label>
           <input class="input" name="descripcion" type="text" placeholder="descripcion">
@@ -74,45 +77,11 @@
           <button class="formateo-boton botonVerde" type="submit">Agregar</button>
         </div>
       </form>
-      
-      
-       
 
-        <article id="listado" class= "inyectadoProductos" >
-          
-        </article>
-    
+      <article id="listado" class="inyectadoProductos">
 
-    
+      </article>
 
-    
-
-      <!-- <form class="form card">
-        <div class="card_header">
-          <h1 class="form_heading"><svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em"
-              viewBox="0 0 24 24">
-              <path fill="white"
-                d="M4.625 22q-.4 0-.725-.325t-.325-.725v-2.625q0-2.25 1.4-3.975t3.6-2.2q-1 .7-1.55 1.762t-.55 2.288v4.75q0 .275.075.55t.25.5zM8.3 22q-.425 0-.737-.312t-.313-.738V16.2q0-1.75 1.238-2.975T11.475 12H16.2q1.75 0 2.975 1.225T20.4 16.2v1.6q0 1.75-1.225 2.975T16.2 22zM12 9.9q-1.65 0-2.8-1.15t-1.15-2.8t1.15-2.8T12 2t2.8 1.15t1.15 2.8t-1.15 2.8T12 9.9" />
-            </svg>Ingresar Cliente</h1>
-        </div>
-        <div class="field">
-          <label for="nombre">Nombre</label>
-          <input class="input" name="nombre" type="text" placeholder="Nombre completo" id="username">
-        </div>
-
-        <div class="field">
-          <label for="tel">Telefono</label>
-          <input class="input" name="Telefono" type="number" placeholder="Ingresar Telefono" id="username">
-        </div>
-        <div class="field">
-          <label for="password">Direccion</label>
-          <input class="input" name="Direccion" type="texto" placeholder="Ingrese Direccion" id="password">
-        </div>
-        <div class="field">
-          <button class="button">Agregar</button>
-          <button class="button2">Editar Cliente</button>
-        </div>
-      </form>-->
     </section>
   </main>
 
@@ -186,7 +155,7 @@
   </footer>
   <script src="./../scripts/footer.js"></script>
   <script src="../index.js"></script>
-  <script src="../scripts/cargarDatos.js" ></script>
+  <script src="../scripts/cargarDatos.js"></script>
 </body>
 
 </html>

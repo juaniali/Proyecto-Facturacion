@@ -16,8 +16,6 @@ module.exports = {
     const { nombre, precio,imagen, descripcion } = req.body;
     console.log('req',req);
     const userId = req.userId;
-    
-    console.log('Datos recibidos:', { nombre, precio, imagen, descripcion, userId });
     // Validar que los campos no estén vacíos
     if (!nombre || !precio || !imagen || !descripcion) {
       return res.status(400).json({ error: 'Todos los campos son obligatorios' });
@@ -28,7 +26,6 @@ module.exports = {
         `INSERT INTO productos (nombre, precio, imagen, descripcion, id_usuario) VALUES (?, ?, ?, ?,?)`,
         [nombre, parseFloat(precio), imagen,descripcion,userId]
       );
-      console.log('Producto creado correctamente');
       res.redirect("/pages/carga-datos.html");
       
     } catch (error) {

@@ -23,8 +23,6 @@ module.exports = (req, res, next) => {
       return res.status(500).send({ auth: false, message: 'Token no autorizado' });
     }
 
-    console.log('Decoded token:', decoded);
-
     if (!decoded.userId) {
       console.log('No userId in decoded token');
       return res.status(500).send({ auth: false, message: 'userId no encontrado en el token' });

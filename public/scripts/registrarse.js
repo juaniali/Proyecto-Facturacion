@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   const res = await fetch('http://localhost:3000/pages/registrarse');
   const datos = await res.json();
-  console.log(datos);
 
 
   // registrarse.addEventListener('submit', (e) => {
