@@ -9,7 +9,7 @@ document.querySelector("body").onload = async () => {
 
   async function obtenerProductos(){
     const token = localStorage.getItem('userId');
-    const res = await fetch('http://localhost:3000/pages/carga-datos',{
+    const res = await fetch('/pages/carga-datos',{
       method:'GET',
       headers: {
         'Content-Type': 'application/json',

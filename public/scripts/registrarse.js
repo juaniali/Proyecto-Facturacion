@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   const registrarse = document.querySelector("#registrarse");
 
-  const res = await fetch('http://localhost:3000/pages/registrarse');
+  const res = await fetch('/pages/registrarse');
   const datos = await res.json();
 
 
