@@ -17,6 +17,7 @@ module.exports = {
     console.log('req',req);
     const userId = req.userId;
     
+    console.log('Datos recibidos:', { nombre, precio, imagen, descripcion, userId });
     // Validar que los campos no estén vacíos
     if (!nombre || !precio || !imagen || !descripcion) {
       return res.status(400).json({ error: 'Todos los campos son obligatorios' });
@@ -25,9 +26,10 @@ module.exports = {
     try {
       await conn.query(
         `INSERT INTO productos (nombre, precio, imagen, descripcion, id_usuario) VALUES (?, ?, ?, ?,?)`,
-        [nombre, parseFloat(precio), imagen,descripcion,userId],
-        res.redirect("/pages/carga-datos.html")
+        [nombre, parseFloat(precio), imagen,descripcion,userId]
       );
+      console.log('Producto creado correctamente');
+      res.redirect("/pages/carga-datos.html");
       
     } catch (error) {
       console.error('Error al crear registro:', error);

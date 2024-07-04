@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-  
   const burguer = document.querySelector(".Burguer");
   const navBarLinks = document.querySelector(".navbar-links");
 
@@ -38,10 +37,11 @@ document.addEventListener('DOMContentLoaded', () => {
     window.location.href='/pages/login.html';
   }
 
-  document.querySelector('#log-out').addEventListener('click', cerrarSesion());
+  document.querySelector('#cerrar-sesion').addEventListener('click', cerrarSesion());
 
   function cerrarSesion() {
-    location.href = '';
+    localStorage.clear();
+    window.location.href='/pages/login.html';
   }
 
 });
