@@ -17,7 +17,10 @@ module.exports = {
   getDetallesByIdFactura: async (req, res) => {
     const [detalles] = await conn.query(`SELECT * FROM detalles WHERE id_factura=?`, req.params.num)
     res.render("modificar", {})
-    } /*,
+    } 
+    
+    
+    /*,
 
     
     crearFactura: async (req, res) => {

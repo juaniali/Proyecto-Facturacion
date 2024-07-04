@@ -23,7 +23,7 @@ module.exports = {
     }
 
     try {
-      const userId = req.user.id;
+      //const userId = req.user.id;
       await conn.query(
         `INSERT INTO productos (nombre, precio, imagen, descripcion, id_usuario) VALUES (?, ?, ?, ?,${userId})`,
         [nombre, parseFloat(precio), imagen,descripcion],
